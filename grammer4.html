@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Present Tense</title>
+  <style>
+    /* Center the heading */
+    h1 {
+      text-align: center;
+      font-size: 48px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    ul {
+       font-size: 20px; 
+    }
+    /* Add some attractive styling to the heading */
+    h1 {
+      color: #0066cc;
+      font-size: 36px;
+      text-shadow: 2px 2px #e5e5e5;
+    }
+    /* Add some margin to the exercise form for spacing */
+    #exerciseForm {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    /* Add some padding and margin to the exercise form list for spacing */
+    #exerciseForm ol {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+  
+    /* Add some margin to the result paragraph for spacing */
+    #result {
+      margin-top: 10px;
+    }
+    p {
+      font-size: 25px; /* Increased font size */
+    }
+
+
+    .explore-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .explore-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .explore-button:hover {
+            background-color: #0056b3;
+        }
+
+  </style>
+  <script>
+function checkAnswers() {
+  var answers = document.getElementById('exerciseForm').getElementsByTagName('input');
+  var correctCount = 0;
+  for (var i = 0; i < answers.length; i++) {
+    if (answers[i].checked && answers[i].value === 'a') {
+      correctCount++;
+    }
+  }
+  document.getElementById('result').innerHTML = 'You got ' + correctCount + ' out of 5 correct!';
+}
+
+  </script>
+</head>
+<body>
+  <h1>Present Tense</h1>
+  <p>The present tense is used to describe actions that are happening right now or are habitual, and it is typically used for general truths, permanent situations, and future scheduled events.</p>
+  
+  <h2>Examples:</h2>
+  <ul>
+    <li>I eat breakfast every morning.</li>
+    <li>She walks to the park.</li>
+    <li>They are playing soccer.</li>
+    <li>The sun rises in the east.</li>
+    <li>My flight leaves at 8 p.m. tonight.</li>
+  </ul>
+  
+  <h2>Forms of Present Tense:</h2>
+  <p>There are different forms of the present tense in English:</p>
+  <ul>
+    <li>Simple Present: Used for general truths and habitual actions.</li>
+    <li>Present Continuous: Used for actions happening right now.</li>
+    <li>Present Perfect: Used for past actions with present relevance.</li>
+    <li>Present Perfect Continuous: Used for actions that started in the past and are still continuing.</li>
+  </ul>
+  
+  <h2>Usage of Present Tense:</h2>
+  <p>The present tense is commonly used in various situations, such as:</p>
+  <ul>
+    <li>Stating facts and general truths.</li>
+    <li>Expressing habitual actions and routines.</li>
+    <li>Describing scheduled future events.</li>
+    <li>Narrating stories or events in the present.</li>
+    <li>Expressing opinions, thoughts, and emotions.</li>
+  </ul>
+  
+  <h2>Exercise:</h2>
+  <p>Select the correct form of the present tense for each sentence:</p>
+  <form id="exerciseForm">
+    <ol>
+      <li>Which form of the present tense is correct for the sentence: "I ___ go"?<br>
+        <input type="radio" name="answer1" value="a"> go
+        <input type="radio" name="answer1" value="b"> goes
+        <input type="radio" name="answer1" value="c"> am going
+        <input type="radio" name="answer1" value="d"> have gone
+      </li>
+      <li>Which form of the present tense is correct for the sentence: "She usually ___ drinks"?<br>
+        <input type="radio" name="answer2" value="a"> drinks
+        <input type="radio" name="answer2" value="b"> drinks
+        <input type="radio" name="answer2" value="c"> is drinking
+        <input type="radio" name="answer2" value="d"> has drunk
+      </li>
+      <li>Which form of the present tense is correct for the sentence: "They ___ watch"?<br>
+        <input type="radio" name="answer3" value="a"> watch
+        <input type="radio" name="answer3" value="b"> watches
+        <input type="radio" name="answer3" value="c"> are watching
+        <input type="radio" name="answer3" value="d"> have watched
+        </li>
+        <li>Which form of the present tense is correct for the sentence: "The train ___ arrives at 6 p.m."?<br>
+        <input type="radio" name="answer4" value="a"> arrives
+        <input type="radio" name="answer4" value="b"> arrive
+        <input type="radio" name="answer4" value="c"> is arriving
+        <input type="radio" name="answer4" value="d"> has arrived
+        </li>
+        <li>Which form of the present tense is correct for the sentence: "I ___ love chocolate."?<br>
+        <input type="radio" name="answer5" value="a"> love
+        <input type="radio" name="answer5" value="b"> loves
+        <input type="radio" name="answer5" value="c"> am loving
+        <input type="radio" name="answer5" value="d"> have loved
+        </li>
+        </ol>
+        <input type="button" value="Submit" onclick="checkAnswers()">
+        
+          </form>
+          <h2>Result:</h2>
+          <p id="result"></p>
+          <div class="explore-button-container">
+            <a href="grammer5.html" class="explore-button">Past Tense</a>
+          </div>
+          <div class="explore-button-container">
+            <a href="grammer6.html" class="explore-button">Future Tense</a>
+        </div>
+        </body>
+        </html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            font-family: sans-serif;
+            font-size: 18px;
+            margin: 0;
+            margin-bottom: 80px;
+            margin-top: -25px;
+            background-color:  rgb(235, 230, 225);
+        }
+
+        nav {
+            background: orangered;
+            padding: 0px 10px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1;
+            height: 69px;
+        }
+
+        .menu,
+        .submenu {
+            list-style-type: none;
+            background-color:#1e1381;
+        }
+       
+
+        .logo {
+            font-size: 14px;
+            padding: 10px 0;
+            margin-top: -6px;
+            order: 0;
+        }
+
+        .item {
+            padding: 17px;
+           
+        }
+        .item a:hover {
+            background-color: #1e1381;
+
+}
+        .item.button {
+            padding: 6px 5px;
+        }
+
+        a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+          
+        }
+
+        .menu {
+            display:flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            background-color: orangered;
+        }
+
+        .menu li a {
+            display: block;
+            padding: 4px 4px;
+        }
+
+        .toggle {
+            order: 2;
+            font-size: 25px;
+            margin-top: 3px;
+        }
+
+        .item.button {
+            order: 1;
+           
+           
+        }
+
+        .item {
+            order: 3;
+            width: 100%;
+            text-align: center;
+            display: none;
+      
+        }
+
+        .active .item {
+            display: block;
+        }
+
+        .button.secondary a:hover {
+            background-color:#1e1381;
+        }
+        .button.button:not(.secondary) a:hover {
+            background-color:#1e1381;
+        }
+        .button:not(.secondary) {
+            margin-left: 280px;
+        }
+
+        .submenu {
+            display: none;
+        }
+
+        .submenu-active .submenu {
+            display: block;
+            
+        }
+
+        .has-submenu i {
+            font-size: 12px;
+        }
+
+        .has-submenu>a::after {
+            font-family: "Font Awesome 5 Free";
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: 900;
+            content: "\f078";
+            color: white;
+            padding-left: 5px;
+        }
+
+        .subitem a {
+            padding: 10px 15px;
+        }
+
+        .submenu-active {
+            background-color: #1e1969;
+            border-radius: 3px;
+           
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            padding-top: 8px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 35px;
+            object-fit: cover;
+            border-radius: 0px;
+            margin-right: 20px;
+            margin-left: 0px; 
+            margin-top: 8px;
+            padding-top: 5px;
+        }
+
+        #faq {
+            width: 75%;
+            margin: 120px auto 0;
+            text-align: center;
+        }
+
+     
+
+        .faq-title {
+            font-size: 27px;
+            margin-bottom: 15px;
+            background-color: rgb(231, 213, 213);
+            border-radius: 10px;
+            
+        }
+
+        .faq-questions {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+           
+        }
+
+        .faq-question {
+            width: 100%;
+            background-color: #66baff;
+            border-radius: 10px;
+            box-shadow: 2px 2px 8px rgba(9, 9, 9, 0.1);
+            margin: 15px 0;
+            text-align: left;
+            padding: 20px;
+            position: relative;
+        }
+
+        input[type="checkbox"] {
+            display: -moz-box;
+        }
+
+        label {
+            font-size: 16px;
+            cursor: pointer;
+            display: block;
+            margin-bottom: 10px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+          
+        }
+
+        p {
+            display: none;
+            font-size: 15px;
+            margin-top: 10px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+            color: #312d2d;
+         
+        }
+
+        input[type="checkbox"]:checked+label+p {
+            display: block;
+        }
+
+
+        .faq-question.active{
+            background-color: rgb(231, 213, 213);
+            
+        }
+
+        .faq-question.active p {
+            display: block;
+            transition: display 0.5s ease;
+            
+      
+        }
+
+
+        
+    .toggle {
+        order: 2;
+        font-size: 25px;
+        margin-top: 3px;
+        position: fixed;
+        right: 20px; 
+        top: 13px; 
+        transition: all 0.3s ease; 
+        cursor: pointer;
+        z-index: 2;
+    }
+
+    .menu.active .toggle {
+        right: 20px; 
+    }
+
+ 
+
+    @media all and (min-width: 960px) {
+  
+
+        .toggle {
+            display: none; 
+        }
+    }
+
+
+
+
+        @media all and (min-width: 1200px) {
+            .menu {
+                justify-content: space-between;
+            }
+     
+            .logo {
+                flex: 0; 
+            }
+
+            .item.button {
+                width: auto;
+                order: 1;
+                display: block;
+            }
+
+            .toggle {
+                flex: 0; 
+                text-align: right;
+                order: 2;
+            }
+
+            .menu li.button a {
+                padding: 10px 15px;
+                margin: 5px 0;
+            }
+        }
+
+        .button a {
+            background: rgb(65, 102, 212) solid;
+          border-radius: 1px;
+         
+        }
+
+        .button.secondary {
+            border: 0;
+            margin-left: 0px;
+        
+        }
+
+        .button.secondary a {
+            background: #0080ff solid;
+            
+        }
+        .button.button:not(.secondary){
+            margin-left: 0px;
+          
+           
+        }
+
+        .button a:hover {
+            text-decoration: none;
+        }
+
+       
+
+        @media all and (min-width: 960px) {
+            .menu {
+                align-items: flex-start;
+                flex-wrap: nowrap;
+                background: none;
+            }
+           .logo {
+                order: 0;
+            }
+
+            .item {
+                order: 1;
+                position: relative;
+                display: block;
+                width: auto;
+            }
+
+            .button {
+                order: 2;
+               
+            }
+           
+            .submenu-active .submenu {
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 68px;
+                background: #1e1381;
+            }
+
+            .toggle {
+                display: none;
+            }
+
+            .submenu-active {
+                border-radius: 0;
+            }
+
+            #faq {
+                margin-top: 110px;
+            }
+
+            .faq-question {
+                width: 60%;
+               
+            }
+            .button.secondary {
+            border: 0;
+            margin-left: 0px;
+            
+        }
+
+        }
+
+
+
+        @media screen and (max-width: 700px) {
+    .menu.active {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .item {
+    padding: 8px;
+ }
+    .menu.active .item {
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+}
+  footer {
+            position: fixed ;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            padding: 2px 0;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 14px;
+         
+        }
+     
+    </style>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6572f7ba07843602b8ffa9ff/1hha9jeud';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+</head>
+
+<body>
+    <nav>
+            <ul class="menu" id="navbar">
+            <li class="logo"><a href="index.html"><img src="assets/navlogo.png" alt="Logo"></a></li>
+            <li class="item"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+            <li class="item has-submenu">
+                <a tabindex="0"><i class="fas fa-caret-down"></i> What we Provide</a>
+                <ul class="submenu">
+                    <li class="subitem"><a href="btechexplore.html">BTech(CS/IT)</a></li>
+                    <li class="subitem"><a href="gateexplore.html">Gate Preparation</a></li>
+                    <li class="subitem"><a href="aptitudeexplore.html">Aptitude Questions</a></li>
+                    <li class="subitem"><a href="pythonexplore.html">Python</a></li>
+                    <li class="subitem"><a href="gkexplore.html">GK, GS, Current Affairs</a></li>
+                    <li class="subitem"><a href="mathsexplore.html">Maths Formulas</a></li>
+                    <li class="subitem"><a href="quizexplore.html">Quiz</a></li>
+                    <li class="subitem"><a href="grammer.html">Practice Grammer</a></li>
+                    <li class="subitem"><a href="tableexplore.html">Tables</a></li>
+                    <li class="subitem"><a href="essayenglish.html">Essay Writing</a></li>
+                    <li class="subitem"><a href="previouspapers.html">AKTU Previous Papers</a></li>
+                </ul>
+                </li>
+            <li class="item"><a href="explore.html"><i class="fas fa-search"></i> Explore</a></li>
+            <li class="item"><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+            <li class="item"><a href="https://erp.aktu.ac.in/webpages/oneview/oneview.aspx"><i class="fa fa-check"></i> One View</a></li>
+            
+                <li class="item"><a href="connect.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                <li class="item button primary"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Log In</a></li>
+            <li class="item button secondary"><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+            <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+        </ul>
+    </nav>
+ 
+    <section id="faq">
+        <h2 class="faq-title">Frequently Asked Questions</h2>
+        <div class="faq-questions">
+            <div class="faq-question">
+                <input type="checkbox" id="q1">
+                <label for="q1">What is  BtechWallah?</label>
+                <p>BtechWallah is a specialized learning platform designed to support students in their academic
+                    journey by providing comprehensive resources, and interactive content.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q2">
+                <label for="q2">How can B.Tech students benefit from BtechWallah?</label>
+                <p>BtechWallah offers a wide range of resources tailored to the B.Tech curriculum, helping students
+                    understand complex concepts, prepare for exams.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q3">
+                <label for="q3">Can I access BtechWallah resources for free?</label>
+                <p>BtechWallah provides free content. While every resource is available at no cost.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q4">
+                <label for="q4">Are the tutorials on BtechWallah suitable for all B.Tech semesters?</label>
+                <p>Yes, BtechWallah caters to students across different semesters of the B.Tech program. Our content
+                    is structured to align with the academic progression of B.Tech courses, covering topics from
+                    introductory to advanced levels.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q5">
+                <label for="q5">Is BtechWallah mobile-friendly?</label>
+                <p>Yes, BtechWallah is optimized for mobile use, allowing students to access learning materials on
+                    various devices, including smartphones and tablets, making it convenient for on-the-go learning.
+                </p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q6">
+                <label for="q6">What kind of support does BtechWallah offer for exam preparation?</label>
+                <p>BtechWallah provides exam preparation resources, including practice tests, sample questions, and
+                    review sessions. These resources are designed to help students prepare thoroughly for their
+                    B.Tech exams.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q7">
+                <label for="q7">Can I access BtechWallah offline?</label>
+                <p>While the primary mode of access is online.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q8">
+                <label for="q8">Is BtechWallah suitable for other engineering branches besides Computer Science and Information Technology?</label>
+                <p>Yes, BtechWallah caters to students from various engineering branches. While some content may be specific to certain branches, many resources are applicable across different disciplines</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q9">
+                <label for="q9">Can I download study materials from BtechWallah for offline access?</label>
+                <p>Currently, BtechWallah primarily operates online. However, we are continually working to enhance user experience, and offline access features may be introduced in the future</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q10">
+                <label for="q10">How can I contribute content or suggest improvements to BtechWallah?</label>
+                <p>We welcome contributions and suggestions from our users. If you have valuable content to share or ideas for improvement, please contact our support team through the "Contact" section on the website.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q11">
+                <label for="q11">Is there a mobile app for BtechWallah?</label>
+                <p>Currently, BtechWallah is optimized for mobile use through web browsers. While we do not have a dedicated mobile app, our website is designed to provide a seamless experience on various devices.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q12">
+                <label for="q12">Is BtechWallah suitable for both beginners and advanced learners in engineering?</label>
+                <p>Yes, BtechWallah caters to students at all levels of expertise. Whether you're a beginner seeking fundamental concepts or an advanced learner diving into specialized topics, we have resources for everyone.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q13">
+                <label for="q13">Who developed BtechWallah, and what inspired its creation?</label>
+                <p>BtechWallah was developed by a B.Tech student who was inspired to create a platform that provides accessible and helpful resources for engineering students.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q14">
+                <label for="q14">Is BtechWallah completely free to use, or are there any hidden charges?</label>
+                <p>BtechWallah is designed to be a free resource for engineering students. There are no hidden charges for accessing the basic study materials and features.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q15">
+                <label for="q15">Are there any plans to add more features to BtechWallah in the future?</label>
+                <p>Yes, the developer is actively working on enhancing BtechWallah. While advanced features may take time to implement, there are plans to add more functionalities based on user feedback and requirements.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q16">
+                <label for="q16">Can I contribute study materials or resources to BtechWallah as a user?</label>
+                <p>Absolutely! BtechWallah encourages user contributions. If you have study materials or resources to share, you can contact the developer to discuss the possibility of adding your content to the platform.</p>
+            </div>
+           
+            <div class="faq-question">
+                <input type="checkbox" id="q17">
+                <label for="q17">What makes BtechWallah stand out from other study platforms?</label>
+                <p>BtechWallah stands out for its student-centric approach, offering a unique blend of user-friendly design and valuable content. How do you think this sets us apart?</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q18">
+                <label for="q18">How does BtechWallah handle user privacy and data security?</label>
+                <p>User data matters! Understand the measures BtechWallah takes to ensure the privacy and security of user information.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q19">
+                <label for="q19">What's the recommended browser for BtechWallah?</label>
+                <p>BtechWallah works best on Google Chrome, but you can use other browsers like Firefox, Safari, Microsoft Edge, Brave and more.</p>
+            </div>
+            <div class="faq-question">
+                <input type="checkbox" id="q20">
+                <label for="q20">What should I do if I encounter technical issues on BtechWallah?</label>
+                <p>Contact our support team through the "Connect" section for assistance with technical issues.</p>
+            </div>
+        
+        </div>
+    </section>
+
+    <footer>
+        &copy; [2024] BtechWallah- All rights reserved. 🎨 Designed | 💻 Developed | 🌐 Hosted by Ayush Patel
+    </footer>
+
+<script>
+ 
+ document.addEventListener("DOMContentLoaded", function () {
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(function (question) {
+        const checkbox = question.querySelector('input[type="checkbox"]');
+        const answer = question.querySelector('p');
+
+        checkbox.addEventListener('change', function () {
+            faqQuestions.forEach(function (otherQuestion) {
+                if (otherQuestion !== question) {
+                    otherQuestion.classList.remove('active');
+                    otherQuestion.querySelector('p').style.display = 'none';
+                }
+            });
+
+            question.classList.toggle('active');
+            answer.style.display = checkbox.checked ? 'block' : 'none';
+        });
+    });
+
+    const submenuToggle = document.querySelector('.has-submenu > a');
+    
+    submenuToggle.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        const submenu = this.nextElementSibling;
+
+        if (submenu.style.display === 'block') {
+            submenu.style.display = 'none';
+        } else {
+            submenu.style.display = 'block';
+        }
+    });
+
+    const navbar = document.getElementById("navbar");
+    const toggleButton = document.querySelector(".toggle a");
+
+    toggleButton.addEventListener("click", function () {
+        navbar.classList.toggle("active");
+    });
+});
+
+
+    </script>
+</body>
+
+</html>

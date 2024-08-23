@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Explore Buttons</title>
+	
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    
+	<div class="button-container">
+        <a href="quiz1.html">
+		    <button class="button button-blue">Quiz 1</button>
+        </a>
+        <a href="quiz2.html">
+		    <button class="button button-purple">Quiz 2</button>
+        </a>
+        <a href="quiz3.html">
+		    <button class="button button-green">Quiz 3</button>
+        </a>
+        <a href="quiz4.html">
+		    <button class="button button-pink">Quiz 4</button>
+        </a>
+	</div>
+</body>
+<footer>
+    <p>Created by [Ayush Patel]</p>
+    </footer>
+</html>
+<style>
+    .button-container {
+	    display: flex;
+	    flex-wrap: wrap;
+	    justify-content: center;
+	    align-items: center;
+	    height: 100vh;
+	    background-color: #F2F2F2;
+    }
+
+    .button {
+        position: relative;
+        display: inline-block;
+        padding: 10px 30px;
+        border-radius: 50px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: bold;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+    }
+
+    .button::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(255, 255, 255, 0.3);
+        border-radius: 50px;
+        transform: scale(0.9);
+        opacity: 0;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .button:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .button:hover::before {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    .button-blue {
+        background-color: #4AA0D5;
+        color: #FFF;
+    }
+
+    .button-purple {
+        background-color: #8C5AA1;
+        color: #FFF;
+    }
+
+    .button-green {
+        background-color: #7FB37C;
+        color: #FFF;
+    }
+
+    .button-pink {
+        background-color: #D571A1;
+        color: #FFF;
+    }
+</style>

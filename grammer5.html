@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Past Tense</title>
+  <style>
+    /* Center the heading */
+    h1 {
+      text-align: center;
+      font-size: 48px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    ul {
+       font-size: 20px; 
+    }
+    /* Add some attractive styling to the heading */
+    h1 {
+      color: #cc6600;
+      font-size: 36px;
+      text-shadow: 2px 2px #e5e5e5;
+    }
+    /* Add some margin to the exercise form for spacing */
+    #exerciseForm {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    /* Add some padding and margin to the exercise form list for spacing */
+    #exerciseForm ol {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    /* Add some margin to the result paragraph for spacing */
+#result {
+  margin-top: 10px;
+}
+p {
+  font-size: 25px; /* Increased font size */
+}
+
+.explore-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .explore-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .explore-button:hover {
+            background-color: #0056b3;
+        }
+
+
+
+</style>
+  <script>
+function checkAnswers() {
+  var answers = document.getElementById('exerciseForm').getElementsByTagName('input');
+  var correctCount = 0;
+  for (var i = 0; i < answers.length; i++) {
+    if (answers[i].checked && answers[i].value === 'a') {
+      correctCount++;
+    }
+  }
+  document.getElementById('result').innerHTML = 'You got ' + correctCount + ' out of 5 correct!';
+}
+  </script>
+</head>
+<body>
+  <h1>Past Tense</h1>
+  <p>The past tense is used to describe actions or events that have already happened in the past. It is typically used to talk about completed actions, states, or habits that no longer apply to the present time.</p>
+  <h2>Examples:</h2>
+  <ul>
+    <li>I ate breakfast yesterday.</li>
+    <li>She walked to the park last night.</li>
+    <li>They played soccer on the weekend.</li>
+    <li>The sun set in the west.</li>
+    <li>I finished my work before leaving.</li>
+  </ul>
+  <h2>Forms of Past Tense:</h2>
+  <p>There are different forms of the past tense in English:</p>
+  <ul>
+    <li>Simple Past: Used for completed actions or events in the past.</li>
+    <li>Past Continuous: Used for actions or events that were in progress in the past.</li>
+    <li>Past Perfect: Used for actions or events that happened before another past action or event.</li>
+    <li>Past Perfect Continuous: Used for actions or events that were ongoing in the past and had a duration.</li>
+  </ul>
+  <h2>Usage of Past Tense:</h2>
+  <p>The past tense is commonly used in various situations, such as:</p>
+  <ul>
+    <li>Talking about completed actions or events in the past.</li>
+    <li>Narrating stories or events that happened in the past.</li>
+    <li>Describing past habits or states that no longer apply to the present time.</li>
+    <li>Referring to a specific time or date in the past.</li>
+    <li>Expressing regrets or wishes about past actions or events.</li>
+  </ul>
+  <h2>Exercise:</h2>
+  <p>Please select the correct form of the past tense for the following sentences:</p>
+
+  <form id="exerciseForm">
+    <ol>
+      <li>I _____ (go) to the store yesterday.
+        <br>
+        <input type="radio" name="q1" value="a"> went
+        <input type="radio" name="q1" value="b"> go
+        <input type="radio" name="q1" value="c"> gone
+      </li>
+      <li>She _____ (read) a book when the power went out.
+        <br>
+        <input type="radio" name="q2" value="a"> was reading
+        <input type="radio" name="q2" value="b"> reads
+        <input type="radio" name="q2" value="c"> read
+      </li>
+      <li>They _____ (visit) their grandparents last weekend.
+        <br>
+        <input type="radio" name="q3" value="a"> visited
+        <input type="radio" name="q3" value="b"> visit
+        <input type="radio" name="q3" value="c"> visiting
+      </li>
+      <li>The train _____ (leave) before I arrived at the station.
+        <br>
+        <input type="radio" name="q4" value="a"> had left
+        <input type="radio" name="q4" value="b"> leaves
+        <input type="radio" name="q4" value="c"> leave
+      </li>
+      <li>We _____ (play) soccer all afternoon.
+        <br>
+        <input type="radio" name="q5" value="a"> played
+        <input type="radio" name="q5" value="b"> play
+        <input type="radio" name="q5" value="c"> playing
+      </li>
+    </ol>
+    <input type="button" value="Submit" onclick="checkAnswers()">
+  </form>
+  <p id="result"></p>
+  <div class="explore-button-container">
+    <a href="grammer4.html" class="explore-button">Present Tense</a>
+</div>
+  <div class="explore-button-container">
+    <a href="grammer6.html" class="explore-button">Future Tense</a>
+</div>
+</body>
+</html>
+
+
+

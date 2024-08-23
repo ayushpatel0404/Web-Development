@@ -1,0 +1,156 @@
+
+<button id="login-button">Login</button>
+<div id="login-modal" class="modal">
+	<div class="modal-content">
+		<span class="close">&times;</span>
+		<h2>Login</h2>
+		<form>
+			<label for="email">Email</label>
+			<input type="email" id="email" name="email" required>
+
+			<label for="password">Password</label>
+			<input type="password" id="password" name="password" required>
+
+			<button type="submit">Login</button>
+		</form>
+		<a href="forgetpassword.html">Forgot Password?</a>
+		<p>Don't have an account? <a href="signup.html">Sign up</a></p>
+		<div class="social-login">
+			<p>Or login with:</p>
+			<button class="facebook-login"><a href="www.facebook.com" style="color: white; text-align: center;" >Facebook</a></button>
+			<button class="google-login"><a href="www.google.com" style="color:white; text-align:center;">Google</a></button>
+			<button class="twitter-login"><a href="www.twitter.com" style="color: white; text-align: center;">Twitter</a></button>
+		</div>
+	</div>
+</div>
+
+
+<style>
+    .modal {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+	background-color: #fff;
+	margin: 10% auto;
+	padding: 20px;
+	border: 1px solid #888;
+	width: 400px;
+	position: relative;
+}
+
+.close {
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 28px;
+	font-weight: bold;
+	cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+	color: #000;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+label {
+	display: block;
+	margin-bottom: 5px;
+}
+
+input[type="email"],
+input[type="password"] {
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	display: inline-block;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	box-sizing: border-box;
+}
+
+button[type="submit"] {
+	background-color: #4CAF50;
+	color: white;
+	padding: 14px 20px;
+	margin: 8px 0;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+button[type="submit"]:hover {
+	background-color: #45a049;
+}
+
+a {
+	display: block;
+	text-align: right;
+	margin-top: 10px;
+}
+
+.social-login {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	margin-top: 1em;
+}
+
+.social-login p {
+	margin-bottom: 0.5em;
+}
+
+.facebook-login,
+.google-login,
+.twitter-login {
+	background-color: #3b5998;
+	color: #fff;
+	padding: 0.5em;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	width: 100%;
+	margin-bottom: 0.5em;
+}
+
+.google-login {
+	background-color: #db4437;
+}
+
+.twitter-login {
+	background-color: #1da1f2;
+}
+
+</style>
+
+<script>
+    var loginButton = document.getElementById("login-button");
+var loginModal = document.getElementById("login-modal");
+var closeButton = document.getElementsByClassName("close")[0];
+
+loginButton.onclick = function() {
+	loginModal.style.display = "block";
+}
+
+closeButton.onclick = function() {
+	loginModal.style.display = "none";
+}
+
+window.onclick = function(event) {
+	if (event.target == loginModal) {
+		loginModal.style.display = "none";
+	}
+}
+
+</script>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .result-container {
+            margin-top: 20px;
+        }
+
+        .correct-answer {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .wrong-answer {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>Quiz Time</h1>
+
+        <div class="question" id="questionContainer"></div>
+
+        <div class="options" id="optionsContainer"></div>
+
+        <button onclick="checkAnswer()">Submit</button>
+
+        <div class="result-container" id="resultContainer"></div>
+    </div>
+
+    <script>
+        var questions = [
+ {
+   question: "1) Which of the following is a server-side scripting language commonly used for web development?",
+      options: ["HTML", " CSS", "Python" ,"JavaScript"],
+      correctAnswer: "Python"
+            },
+    {
+        question: "2) What is the purpose of the “form” element in HTML?",
+        options: ["It defines a hyperlink", "It creates a container for metadata", "It allows users to input data and submit it to the server", "It defines a section in a document"],
+        correctAnswer: "It allows users to input data and submit it to the server"
+    },
+    {
+        question: "3) Which CSS property is used to create rounded corners for an HTML element ?",
+        options: ["border-radius", "corner-radius", "rounded-corners","box-radius"],
+        correctAnswer: "border-radius"
+    },
+    {
+        question: "4) What is the purpose of the “viewport” meta tag in HTML ?",
+        options: ["To define the color palette for the web page", "To set the width and initial scale of the web page for different devices", "To define the font style and size","To specify the default language of the web page"],
+        correctAnswer: "To set the width and initial scale of the web page for different devices"
+    },
+    {
+        question: "5) Which of the following is NOT a commonly used web development framework for Python ?",
+        options: ["Flask", "Django", "Express.js"," Pyramid"],
+        correctAnswer: " Express.js"
+    },
+    {
+        question: "6)What is the purpose of the “cookie” in web development ?",
+        options: ["To store data on the client’s browser for future use", "To encrypt sensitive information during transmission", "To handle server-side logic"," To create user authentication systems"],
+        correctAnswer: "To store data on the client’s browser for future use"
+    },
+    {
+        question: "7) Which of the following is an example of a front-end web development framework/library ?",
+        options: [" Express.js", "Django", "Flask","React.js"],
+        correctAnswer: "React.js"
+    },
+    {
+        question: "8)  Which HTTP method is typically used to retrieve data from a web server ?",
+        options: [" GET", "POST", " PUT","DELETE"],
+        correctAnswer: "GET"
+    },
+    {
+        question: "9)In a URL, what does the domain name represent ?",
+        options: ["The type of website (e.g., .com, .org)", "The name of the web developer", " The address of the web server hosting the website","The title of the web page"],
+        correctAnswer: "The address of the web server hosting the website"
+    },
+    {
+        question: "10)Which JavaScript function is used to change the content of an HTML element ?",
+        options: ["modify()", "change()", "update()","innerHTML()"],
+        correctAnswer: " innerHTML()"
+    },
+    
+];
+        var questionIndex = 0;
+
+        function loadQuestion() {
+            var questionContainer = document.getElementById('questionContainer');
+            var optionsContainer = document.getElementById('optionsContainer');
+            var currentQuestion = questions[questionIndex];
+
+            questionContainer.innerHTML = "<p>" + currentQuestion.question + "</p>";
+
+            var optionsHtml = "";
+            currentQuestion.options.forEach(function (option) {
+                optionsHtml += "<label><input type='radio' name='q' value='" + option + "'>" + option + "</label>";
+            });
+
+            optionsContainer.innerHTML = optionsHtml;
+        }
+
+        function checkAnswer() {
+            var userAnswer = document.querySelector('input[name="q"]:checked');
+            var resultContainer = document.getElementById('resultContainer');
+
+            if (userAnswer) {
+                var userResponse = userAnswer.value;
+                var currentQuestion = questions[questionIndex];
+
+                resultContainer.innerHTML = "";
+
+                if (userResponse === currentQuestion.correctAnswer) {
+                    resultContainer.innerHTML = "<p class='correct-answer'>Correct Answer!</p>";
+                } else {
+                    resultContainer.innerHTML = "<p class='wrong-answer'>Wrong Answer! The correct answer is " + currentQuestion.correctAnswer + ".</p>";
+                }
+
+                // Move to the next question
+                questionIndex++;
+                if (questionIndex < questions.length) {
+                    loadQuestion();
+                } else {
+                    // Display correct answers after 10 questions
+                    displayCorrectAnswers();
+                }
+            } else {
+                resultContainer.innerHTML = "<p class='wrong-answer'>Please select an answer.</p>";
+            }
+        }
+
+        function displayCorrectAnswers() {
+            var resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerHTML = "<p class='correct-answer'>Quiz Completed! Here are the correct answers:</p>";
+
+            questions.forEach(function (question) {
+                resultContainer.innerHTML += "<p class='correct-answer'>" + question.question + ": " + question.correctAnswer + "</p>";
+            });
+        }
+
+        
+        loadQuestion();
+    </script>
+
+</body>
+</html>

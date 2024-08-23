@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 90px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .result-container {
+            margin-top: 20px;
+        }
+
+        .correct-answer {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .wrong-answer {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>HTML QUIZ - 1</h1>
+        <hr>
+
+        <div class="question" id="questionContainer"></div>
+
+        <div class="options" id="optionsContainer"></div>
+        
+        <button onclick="previousQuestion()">Previous</button>
+        <button onclick="checkAnswer()">Submit</button>
+        
+        <div class="result-container" id="resultContainer"></div>
+    </div>
+
+    <script>
+        var questions = [
+            {
+                question: "1) HTML stands for -",
+                options: ["HyperText and links Markup Language", "HyperText Markup Language" , "None of these"],
+                correctAnswer: "HyperText Markup Language"
+            },
+    {
+        question: "2) The correct sequence of HTML tags for starting a webpage is -",
+        options: ["Head, Title, HTML, body", "HTML, Body, Title, Head", "HTML, Head, Title, Body","HTML, Head, Title, Body"],
+        correctAnswer: "HTML, Head, Title, Body"
+    },
+    {
+        question: "3) Which of the following element is responsible for making the text bold in HTML?",
+        options: ["pre", "a", "b", "br"],
+        correctAnswer: "b"
+    },
+    {
+        question: "4) Which of the following tag is used for inserting the largest heading in HTML?",
+        options: ["h3", "h1", "h5", "h6"],
+        correctAnswer: "h1"
+    },
+    {
+        question: "5) Which of the following tag is used to insert a line-break in HTML?",
+        options: ["pre", "a", "br","b"],
+        correctAnswer: "br"
+    },
+    {
+        question: "6) How to create an unordered list (a list with the list items in bullets) in HTML?",
+        options: ["ul", "ol", "li","i"],
+        correctAnswer: "ul"
+    },
+    {
+        question: "7)  How to create an ordered list (a list with the list items in numbers) in HTML?",
+        options: ["ul", "ol", "li","i"],
+        correctAnswer: "ol"
+    },
+    {
+        question:"8) Which of the following element is responsible for making the text italic in HTML?",
+        options: ["i", "italic", "it","pre"],
+        correctAnswer: "i"
+    },
+    {
+        question: "9) Which of the following tag is used to make the underlined text?",
+        options: ["i", "ul", "u","pre"],
+        correctAnswer: "u"
+    },
+    {
+        question: "10) Which of the following tag is used to define options in a drop-down selection list?",
+        options: ["Select", "list", "dropdown","option"],
+        correctAnswer: "Canberra"
+    },
+   
+];
+        var questionIndex = 0;
+
+        function loadQuestion() {
+            var questionContainer = document.getElementById('questionContainer');
+            var optionsContainer = document.getElementById('optionsContainer');
+            var currentQuestion = questions[questionIndex];
+
+            questionContainer.innerHTML = "<p>" + currentQuestion.question + "</p>";
+
+            var optionsHtml = "";
+            currentQuestion.options.forEach(function (option) {
+                optionsHtml += "<label><input type='radio' name='q' value='" + option + "'>" + option + "</label>";
+            });
+
+            optionsContainer.innerHTML = optionsHtml;
+        }
+
+        function checkAnswer() {
+            var userAnswer = document.querySelector('input[name="q"]:checked');
+            var resultContainer = document.getElementById('resultContainer');
+
+            if (userAnswer) {
+                var userResponse = userAnswer.value;
+                var currentQuestion = questions[questionIndex];
+
+                resultContainer.innerHTML = "";
+
+                if (userResponse === currentQuestion.correctAnswer) {
+                    resultContainer.innerHTML = "<p class='correct-answer'>Correct Answer!</p>";
+                } else {
+                    resultContainer.innerHTML = "<p class='wrong-answer'>Wrong Answer! The correct answer is " + currentQuestion.correctAnswer + ".</p>";
+                }
+
+               
+                questionIndex++;
+                if (questionIndex < questions.length) {
+                    loadQuestion();
+                } else {
+                   
+                    displayCorrectAnswers();
+                }
+            } else {
+                resultContainer.innerHTML = "<p class='wrong-answer'>Please select an answer.</p>";
+            }
+        }
+
+        function displayCorrectAnswers() {
+            var resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerHTML = "<p class='correct-answer'>Quiz Completed! Here are the correct answers:</p>";
+
+            questions.forEach(function (question) {
+                resultContainer.innerHTML += "<p class='correct-answer'>" + question.question + ": " + question.correctAnswer + "</p>";
+            });
+        }
+
+        
+        loadQuestion();
+
+
+    
+
+
+    function previousQuestion() {
+       
+        if (questionIndex > 0) {
+           
+            questionIndex--;
+            loadQuestion();
+
+           
+            document.getElementById('submitButton').disabled = false;
+        } else {
+           
+            alert("This is the first question.");
+        }
+    }
+
+    </script>
+
+</body>
+</html>

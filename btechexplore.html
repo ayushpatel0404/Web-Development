@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B.TECH PROGRAM</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      text-align: center;
+      background-color: rgb(241, 220, 201);
+      margin: 0;
+      padding: 0;
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      color: maroon;
+      margin-top: 27px;
+    }
+
+    .year-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      max-width: 570px;
+      margin: 40px auto 0 auto; 
+      opacity: 0;
+      transform: translateY(-50px);
+      animation: dropFromAbove 1.5s ease-out forwards;
+    }
+
+    @keyframes dropFromAbove {
+      0% {
+        opacity: 0;
+        transform: translateY(-50px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .year {
+      flex: 1 1 300px;
+      margin-bottom: 5px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 4px maroon;
+      padding: 20px;
+      transition: transform 0.3s ease-in-out;
+      animation: fadeInDown 0.7s cubic-bezier(0.36, 0.55, 0.66, 0.72) forwards;
+    }
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .year:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+
+    .year:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+
+    .year:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+
+    .year:hover {
+      transform: scale(1.05);
+    }
+
+    h3 {
+      color: brown;
+      font-size: 20px;
+      margin-top: -5px;
+    }
+
+    .semester-buttons {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      justify-content: center;
+    }
+
+    .semester-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: rgb(254, 138, 95);
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      transition: background-color 0.3s ease-in-out;
+    }
+
+    .semester-button:hover {
+      background-color: #e86005;
+    }
+
+    .semester-content {
+      text-align: center;
+      margin-top: 20px;
+      color: #555;
+    }
+
+    @media (min-width: 768px) {
+      .year {
+        flex-basis: calc(50% - 20px);
+        max-width: 500px;
+      }
+    }
+    @media (max-width: 1269px) {
+      .year {
+        max-width: 350px;
+      }
+      }
+
+   
+  </style>
+</head>
+<body>
+  <h2>B.TECH PROGRAM</h2>
+  <div class="year-container">
+    <div class="year">
+      <h3>First Year</h3>
+      <div class="semester-buttons">
+        <a href="btechsemester1.html" target="_self"><button class="semester-button" onclick="showSemester('Semester 1')">Semester 1</button></a>
+        <a href="btechsemester2.html" target="_self"><button class="semester-button" onclick="showSemester('Semester 2')">Semester 2</button></a>
+      </div>
+    </div>
+
+    <div class="year">
+      <h3>Second Year</h3>
+      <div class="semester-buttons">
+        <a href="btechsemester3.html" target="_self"><button class="semester-button" onclick="showSemester('Semester 3')">Semester 3</button></a>
+        <a href="btechsemester4.html" target="_self"><button class="semester-button" onclick="showSemester('Semester 4')">Semester 4</button></a>
+      </div>
+    </div>
+
+    <div class="year">
+      <h3>Third Year</h3>
+      <div class="semester-buttons">
+        <a href="btechsemester5.html" target="_self"><button class="semester-button" onclick="showSemester('Semester 5')">Semester 5</button></a>
+        <a href="btechsemester6.html" target="_self"><button class="semester-button" onclick="showSemester('Semester 6')">Semester 6</button></a>
+      </div>
+    </div>
+
+    <div class="year">
+      <h3>Fourth Year</h3>
+      <div class="semester-buttons">
+        <a href="btechsemester7.html" target="_self"><button class="semester-button" onclick="showSemester('Semester 7')">Semester 7</button></a>
+        <a href="btechsemester8.html" target="_self"><button class="semester-button" onclick="showSemester('Semester 8')">Semester 8</button></a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      document.querySelector('.year-container').style.opacity = '1';
+    };
+
+    function showSemester(semester) {
+      var content = "Content for " + semester + " will go here.";
+      document.getElementById('semesterContent').innerHTML = content;
+    }
+  </script>
+</body>
+</html>

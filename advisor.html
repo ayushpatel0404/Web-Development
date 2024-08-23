@@ -1,0 +1,413 @@
+
+<div class="instructor-container">
+    <img src="" alt="instructor photo" class="instructor-photo">
+    <div class="instructor-details">
+      <h1 class="name">Ayush Patel</h1>
+      <h2 class="title">Web Development Instructor</h2>
+      <p class="bio">Ayush Patel is a highly experienced web developer and student. He has been working in the industry for over 3 years and has taught hundreds of students how to build beautiful, functional websites from scratch. With his patient and approachable teaching style, John makes web development accessible and fun for everyone.</p>
+      <h3 class="subtitle">Skills:</h3>
+      <ul class="skills">
+        <li>HTML</li>
+        <li>CSS</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Vue.js</li>
+      </ul>
+    </div>
+  </div>
+
+  <style>
+  .instructor-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 70px;
+    background-color: rgb(255, 255, 255);
+  }
+  
+  .instructor-photo {
+    width: 450px;
+    height: 450px;
+    border-radius: 50%;
+    margin-right: 50px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.3);
+  }
+  
+  .instructor-details {
+    text-align: left;
+    width: 50%;
+  }
+  
+  .name {
+    font-size: 50px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 3px white;
+  }
+  
+  .title {
+    font-size: 30px;
+    margin-bottom: 30px;
+    color: rgb(51, 86, 202);
+    text-shadow: 2px 2px 3px rgb(158, 195, 211);
+  }
+  
+  .bio {
+    font-size: 20px;
+    line-height: 1.75;
+    margin-bottom: 40px;
+
+  }
+  
+  .subtitle {
+    font-size: 30px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 3px rgb(179, 168, 214);
+  }
+  
+  .skills {
+    list-style: none;
+    margin-bottom: 40px;
+    padding: 0;
+    text-align: left;
+  
+  }
+  
+  .skills li {
+    font-size: 18px;
+    margin-bottom: 20px;
+    padding-left: 30px;
+    position: relative;
+  }
+  
+  .skills li:before {
+    content: "✓";
+    font-size: 20px;
+    position: absolute;
+    left: 0;
+  }
+  </style>
+
+
+  <!-- Navigation Bar --> 
+
+  <nav>
+
+    <ul class="menu">
+        <li class="logo"><a href="#" >THE LEARNING HUB</a></li>
+  
+   
+  
+       
+        <li class="item"><a href="home.html">Home</a>
+        </li>
+        <li class="item"><a href="explore.html">Explore</a></li>
+  
+        <li class="item"><a href="about.html">About</a></li>
+        <li class="item has-submenu">
+            <a tabindex="0">Services</a>
+            <ul class="submenu">
+                <li class="subitem"><a href="#">Design</a></li>
+                <li class="subitem"><a href="#">Development</a></li>
+                <li class="subitem"><a href="#">SEO</a></li>
+                <li class="subitem"><a href="#">Copywriting</a></li>
+            </ul>
+        </li>
+        <li class="item has-submenu">
+            <a tabindex="0">Plans</a>
+            <ul class="submenu">
+                <li class="subitem"><a href="#">Freelancer</a></li>
+                <li class="subitem"><a href="#">Startup</a></li>
+                <li class="subitem"><a href="#">Enterprise</a></li>
+            </ul>
+        </li>
+       
+        <li class="item"><a href="connect.html">Connect Us</a>
+        </li>
+        
+        <li class="item button"><a href="learningnewlogin.html">Log In</a></li>
+        <li class="item button secondary"><a href="learningnewsignup.html">Sign Up</a></li>
+        <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+    </ul>
+  </nav>
+  
+  
+  <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  
+  </head>
+  
+  
+  <style>
+  /* Basic styling */
+  * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0;
+  }
+  body {
+      font-family: sans-serif;
+      font-size: 18px;
+  }
+  nav {
+      background:orangered;
+      padding: 0 20px;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 1;
+      border-top: 2px solid #F9A828;
+      border-bottom: 2px solid #F9A828;
+     }
+    
+  
+  a {
+      color: white;
+      text-decoration: none;
+  }
+  .menu,
+  .submenu {   
+      list-style-type: none;
+  }
+  .logo {
+      font-size: 20px;
+      padding: 7.5px 10px 7.5px 0;
+  }
+  .item {
+      padding: 10px;
+  }
+  .item.button {
+      padding: 9px 5px;
+  }
+  .item:not(.button) a:hover,
+  .item a:hover::after {
+      color: #ccc;
+  }
+  
+  
+  
+  /* Mobile menu */
+  .menu {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .menu li a {
+      display: block;
+      padding: 15px 5px;
+  }
+  .menu li.subitem a {
+      padding: 15px;
+  }
+  .toggle {
+      order: 1;
+      font-size: 20px;
+  }
+  .item.button {
+      order: 2;
+  }
+  .item {
+      order: 3;
+      width: 100%;
+      text-align: center;
+      display: none;
+  }
+  .active .item {
+      display: block;
+  }
+  .button.secondary { /* divider between buttons and menu links */
+      border-bottom: 1px white solid;
+  }
+  
+  
+  /* Submenu up from mobile screens */
+  .submenu {
+      display: none;
+  }
+  .submenu-active .submenu {
+     display: block;
+  }
+  .has-submenu i {
+      font-size: 12px;
+  }
+  .has-submenu > a::after {
+      font-family: "Font Awesome 5 Free";
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 900; 
+      content: "\f078";
+      color: white;
+      padding-left: 5px;
+  }
+  .subitem a {
+      padding: 10px 15px;
+  }
+  .submenu-active {
+      background-color: #1e1969;
+      border-radius: 3px;
+  }
+  </style>
+  
+  
+  <head>
+    <script src="script.js"></script>
+  </head>
+  
+  
+  
+  <script>
+  
+  const toggle = document.querySelector(".toggle");
+  const menu = document.querySelector(".menu");
+
+  function toggleMenu() {
+      if (menu.classList.contains("active")) {
+          menu.classList.remove("active");
+          
+          
+          toggle.querySelector("a").innerHTML = "<i class=’fas fa-bars’></i>";
+      } else {
+          menu.classList.add("active");
+          
+       
+          toggle.querySelector("a").innerHTML = "<i class=’fas fa-times’></i>";
+      }
+  }
+
+  toggle.addEventListener("click", toggleMenu, false);
+  
+  
+  const items = document.querySelectorAll(".item");
+ 
+  function toggleItem() {
+    if (this.classList.contains("submenu-active")) {
+      this.classList.remove("submenu-active");
+    } else if (menu.querySelector(".submenu-active")) {
+      menu.querySelector(".submenu-active").classList.remove("submenu-active");
+      this.classList.add("submenu-active");
+    } else {
+      this.classList.add("submenu-active");
+    }
+  }
+
+  for (let item of items) {
+      if (item.querySelector(".submenu")) {
+        item.addEventListener("click", toggleItem, false);
+        item.addEventListener("keypress", toggleItem, false);
+      }   
+  }
+  
+  
+  </script>
+  
+  
+  <style>
+  
+  /* Tablet menu */
+  @media all and (min-width: 700px) {
+      .menu {
+          justify-content: center;
+      }
+      .logo {
+          flex: 1;
+      }
+      .item.button {
+          width: auto;
+          order: 1;
+          display: block;
+      }
+      .toggle {
+          flex: 1;
+          text-align: right;
+          order: 2;
+      }
+    
+      .menu li.button a {
+          padding: 10px 15px;
+          margin: 5px 0;
+      }
+      .button a {
+          background: rgb(65,102,212) solid;
+          border: 1px white solid;
+          
+      }
+      .button.secondary {
+          border: 0;
+      }
+      .button.secondary a {
+          background: #0080ff solid;
+          border: 1px white solid;  
+      }
+      .button a:hover {
+          text-decoration: none;
+        
+      }
+      .button:not(.secondary) a:hover {
+          background: royalblue solid;
+          border-color:white solid;
+          
+      }
+  }
+  
+  
+  
+  /* Desktop menu */
+  @media all and (min-width: 960px) {
+      .menu {
+          align-items: flex-start;     
+          flex-wrap: nowrap;
+          background: none;
+      }
+      .logo {
+          order: 0;
+      }
+      .item {
+          order: 1;
+          position: relative;
+          display: block; 
+          width: auto;
+      }
+      .button {
+          order: 2;
+      }
+      .submenu-active .submenu {
+          display: block;
+          position: absolute;
+          left: 0;
+          top: 68px;
+          background:  #1e1381;;
+      }
+      .toggle {
+          display: none;
+      }
+      .submenu-active {
+          border-radius: 0;
+      }
+  }
+  
+  
+  </style>
+  
+  
+  <script>
+  
+
+  function closeSubmenu(e) {
+    if (menu.querySelector(".submenu-active")) {
+      let isClickInside = menu
+        .querySelector(".submenu-active")
+        .contains(e.target);
+      if (!isClickInside && menu.querySelector(".submenu-active")) {
+        menu.querySelector(".submenu-active").classList.remove("submenu-active");
+      }
+    }
+  }
+
+  document.addEventListener("click", closeSubmenu, false);
+  </script>
+
+  
+<!----navigation-bar-end---->
+
+

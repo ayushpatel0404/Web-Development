@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #333;
+            background-color:  rgb(241, 220, 201);
+            margin: 0;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: orangered;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+            height: 55px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            color: #fff;
+            margin-top: 3px;
+            margin-left: -1px;
+        }
+
+        .logo img {
+            width: 80px;
+            height: 40px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-left: -5px;
+          
+        }
+
+        .nav-buttons {
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-buttons a {
+            margin-left: 5px;
+            margin-right: -7px;
+            margin-left: 18px;
+            padding: 3px 4px;
+            background-color: #4caf50;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #2e7d32;
+            color: #fff;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            margin-top: 80px; 
+        }
+
+        .about-section {
+            text-align:justify ;
+        }
+
+        .title {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #3498db;
+            text-align: center;
+            
+        }
+
+        .title img {
+            width: 100%;
+            max-width: 300px;
+            height: 90px;
+            border-radius: 60%;
+            box-shadow: 1px 2px 8px black;
+            
+        }
+
+        .description {
+            font-size: 17px;
+            margin-bottom: 30px;
+            color: #555;
+            font-family:Georgia, 'Times New Roman', Times, serif
+        }
+
+        .mission {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .mission-title {
+            font-size: 24px;
+            margin-bottom: 15px;
+            color: #3498db;
+            
+        }
+
+        .mission-description {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border-radius: 10px;
+            text-decoration: none;
+            font-size: 14px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-primary {
+            background-color: #0e29c7;
+            color: #fff;
+            margin-right: 10px;
+
+        }
+      
+        .btn-secondary {
+            background-color: #0ca74d;
+            color: #fff;
+            margin-left:10px;
+        }
+      
+       
+    /* Footer */
+    footer {
+            position: fixed ;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            padding: 2px 0;
+            
+        }
+
+        footer p {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 5px;
+            margin-top: 5px;
+            font-family:'Times New Roman', Times, serif;
+        }
+
+
+        @media (max-width: 767px) {
+            .title {
+                font-size: 28px;
+            }
+            .title img {
+             max-width: 320px;
+             height: 90px;
+            }
+
+            .description {
+                font-size: 15px;
+                font-family:'Times New Roman', Times, serif;
+            }
+
+            .mission-title {
+                font-size: 20px;
+            }
+
+            .mission-description {
+                font-size: 15px;
+            }
+
+            .btn {
+                padding: 6px 12px;
+                font-size: 14px;
+            }
+           
+         /* Footer */
+    footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            padding: 2px 0;
+            
+        }
+
+        footer p {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 0px;
+            margin-top: 3px;
+            height: 40px ;
+            font-family:'Times New Roman', Times, serif;
+            line-height: 18px;
+        }
+
+        } 
+    </style>
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6572f7ba07843602b8ffa9ff/1hha9jeud';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+
+</head>
+
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <li class="logo"><a href="index.html"><img src="assets/navlogo.png" alt="Logo"></a></li>
+            <h4><!--Space for writing with the logo--></h4>
+        </div>
+        <div class="nav-buttons">
+            <a href="FAQquestions.html"><i class="fas fa-question-circle"></i>FAQ Page</a>
+            <a href="connect.html"><i class="fas fa-phone-volume"></i>Connect</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="about-section">
+            <h1 class="title"><img src="assets/logo new.png" alt="title"></h1>
+            <div class="mission">
+            <div class="description">
+                BtechWallah is a platform dedicated to providing accessible and high-quality education to everyone. With
+                a wide range of courses and resources, our goal is to empower individuals to pursue their passions and
+                reach their full potential. We are passionate about empowering students on their educational journey.
+                Whether you're unraveling the mysteries of complex algorithms or diving into the intricacies of
+                structural engineering, we're here to guide you every step of the way.
+                <br>
+                 <br>
+                    BtechWallah is the brainchild of a passionate B.Tech student who understands the struggles of 
+                    navigating the vast sea of educational content scattered across the internet. Developed with
+                    a genuine desire to simplify the learning journey, BtechWallah is a platform where learners
+                     can find a comprehensive array of educational resources all in one place. This endeavor is 
+                     rooted in the founder's firsthand experience, realizing the need for a centralized hub that caters
+                     to the diverse needs of learners.
+                     <br>
+                     <br>
+                     
+            </p>
+           
+            <div class="mission">
+                <h2 class="mission-title">The Origin Story</h2>
+                <p class="mission-description">
+                    As a B.Tech student, the founder faced the common challenge of spending hours scouring the 
+                    internet for relevant study materials, tutorials, and insights to supplement classroom learning. 
+                    Recognizing the inefficiency and frustration inherent in this process, the idea of BtechWallah took shape – 
+                    a platform crafted by a student for fellow learners. The goal was simple: to create a space where students 
+                    could access everything they need for their academic journey without the hassle of navigating multiple platforms.
+                </p> 
+            </div>
+            <div class="mission">
+                <h2 class="mission-title">BtechWallah Advantage</h2>
+                <p class="mission-description">
+                    At BtechWallah, we understand that learners often feel overwhelmed by the sheer volume of information available 
+                    online. Our platform addresses this challenge by curating a wide range of content, from course materials to practical guides, 
+                    all tailored to the B.Tech curriculum. We believe in streamlining the learning process, offering a user-friendly interface that 
+                    allows students to focus on understanding concepts rather than getting lost in a sea of disparate resources.
+                </p> 
+            </div>
+            <div class="mission">
+                <h2 class="mission-title">Our Vision</h2>
+                <p class="mission-description">
+                    BtechWallah envisions a world where education is seamless and accessible. We aim to empower students to take control of 
+                    their learning experience by providing a platform that eliminates the need to hop from one site to another. 
+                    In this vision, every B.Tech student can efficiently navigate their academic journey, spending more time grasping complex 
+                    concepts and less time searching for the right materials. 
+                </p> 
+            </div>
+            <div class="mission">
+                <h2 class="mission-title">Our Mission</h2>
+                <p class="mission-description">
+                    
+                  <b>Simplicity in Learning :</b><br>
+                    Our primary mission is to simplify the learning process. BtechWallah is designed to be the go-to platform for B.Tech students, offering a straightforward approach to accessing study materials, video lectures, and supplementary resources. We believe that simplicity in learning is key to fostering a deeper understanding of subjects and, ultimately, academic success.<br><br>
+                  
+                   
+                    <b>Centralized Learning Hub :</b><br>
+                    BtechWallah serves as a centralized learning hub, bringing together a diverse range of educational content. From lecture notes and study guides to practical tips and industry insights, our platform is a one-stop-shop for students looking to enhance their understanding and excel in their studies. No more navigating through countless tabs – everything you need is right here.<br><br>
+                    
+                    <b>Student-Centric Approach :</b><br>
+                    Being developed by a B.Tech student, BtechWallah understands the unique challenges and needs of its users. Our student-centric approach means that we are constantly adapting and evolving based on user feedback. We encourage students to actively participate in shaping the platform, ensuring that it remains a dynamic, responsive, and relevant resource for the community.<br><br>
+                    
+                   <b>Empowering Self-Directed Learning :</b><br>
+                    We believe in the power of self-directed learning. BtechWallah encourages students to take ownership of their education by providing them with the tools and resources to explore topics at their own pace. Whether you're preparing for exams, working on projects, or simply deepening your understanding of a particular subject, BtechWallah is here to support your journey.<br><br>
+                
+                </p>
+            </div>
+            <div class="buttons">
+                <a href="explore.html" class="btn btn-primary">Explore Courses</a>
+                <a href="index.html" class="btn btn-secondary">Go Back</a>
+            </div>
+        </div>
+    </div>
+  
+    <footer>
+        <p>&copy; [2024] BtechWallah- All rights reserved. 🎨 Designed | 💻 Developed | 🌐 Hosted by Ayush Patel.</p>
+      </footer>
+</body>
+
+</html>

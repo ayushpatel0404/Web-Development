@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sentence Structure</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #fafafa;
+      font-size: 45px;
+      text-shadow: #aa13e6;
+      background-color: #ea6421;
+    }
+
+    h2 {
+      background-color:#da3bec;
+      font-size: 40px;
+      border-radius:60px ;
+      text-align: center;
+      margin: 0 auto;
+      max-width: 400px;
+      
+
+   
+    }
+
+
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 5px;
+      box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .sentence-type {
+      margin-bottom: 20px;
+     
+    }
+
+    .sentence-type h2 {
+      color: #000000;
+      font-size: 35px;
+    }
+
+    .sentence-type p {
+      color: #000000;
+      font-size: 23px;
+    }
+
+    .exercise {
+      margin-bottom: 20px;
+    }
+
+    .exercise p {
+      margin-bottom: 5px;
+      
+    }
+
+    .answer {
+      display: none;
+    }
+
+    .show-answer {
+      cursor: pointer;
+      color: #007bff;
+      text-decoration: underline;
+    }
+  </style>
+   <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var showAnswerBtns = document.getElementsByClassName('show-answer');
+
+      for (var i = 0; i < showAnswerBtns.length; i++) {
+        showAnswerBtns[i].addEventListener('click', function() {
+          var answer = this.nextElementSibling;
+          answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+        });
+      }
+    });
+  </script>
+</head>
+<body>
+  <div class="container">
+    <h1>Sentence Structure</h1>
+
+    <div class="sentence-type">
+      <h2>Simple Sentence</h2>
+      <ul>
+      <p>
+        A simple sentence consists of one independent clause.</p>
+      <p>Example: I like to read books.</p>
+      <div class="exercise">
+
+        <p>Exercise: Identify whether the following sentences are simple sentences or not.</p>
+        <p>1. The sun is shining brightly.</p>
+        <p>2. She went to the store and bought some groceries.</p>
+        <p>3. He studied hard for the exam, but he still failed.</p>
+        <p>4. After finishing his homework, he played video games.</p>
+        <p>5. The dog barked and wagged its tail.</p>
+        <p class="show-answer" id="showAnswer1">Show Answer</p>
+        <div class="answer" id="answer1">
+          <p>Answer: Yes, all the sentences are simple sentences as they contain only one independent clause each.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="sentence-type">
+      <h2>Compound Sentence</h2>
+      <ul>
+      <p>A compound sentence consists of two or more independent clauses joined by coordinating conjunctions (such as and, but, or), semicolons, or conjunctive adverbs (such as however, therefore).</p>
+      <p>Example: I went to the park, and he stayed at home.</p>
+      <div class="exercise">
+        <p>Exercise: Identify whether the following sentences are compound sentences or not.</p>
+        <p>1. She likes to dance, and he likes to sing.</p>
+        <p>2. I ate dinner, but I'm still hungry.</p>
+        <p>3. He worked hard, and he got a promotion.</p>
+        <p>4. I want to go to the beach; however, it's raining.</p>
+        <p>5. They laughed at the joke, so they were in a good mood.</p>
+        <p class="show-answer" id="showAnswer2">Show Answer</p>
+        <div class="answer" id="answer2">
+          <p>Answer: Yes, sentences 1, 2, and 3 are compound sentences as they consist of two independent clauses joined by coordinating conjunctions "and" and "but". Sentence 4 is also a compound sentence as it consists of two independent clauses joined by a conjunctive adverb "however". Sentence 5 is a compound sentence as it consists of two independent clauses joined by a coordinating conjunction "so".</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sentence-type">
+      <h2>Complex Sentence</h2>
+      <ul>
+      <p>A complex sentence consists of one independent clause and at least one dependent clause introduced by subordinating conjunctions (such as because, if, when) or relative pronouns (such as who, which, that).</p>
+      <p>Example: She went to the market because she needed some groceries.</p>
+      <div class="exercise">
+        <p>Exercise: Identify whether the following sentences are complex sentences or not.</p>
+        <p>1. I will go to the party if I finish my work on time.</p>
+        <p>2. The book that I read was very interesting.</p>
+        <p>3. He couldn't play basketball because he twisted his ankle.</p>
+        <p>4. After she finished her presentation, she received a round of applause.</p>
+        <p>5. I like to eat pizza, which is my favorite food.</p>
+        <p class="show-answer" id="showAnswer3">Show Answer</p>
+        <div class="answer" id="answer3">
+          <p>Answer: Yes, sentences 1, 2, 3, and 4 are complex sentences as they consist of one independent clause and at least one dependent clause introduced by subordinating conjunctions or relative pronouns. Sentence 5 is also a complex sentence as it consists of one independent clause and one dependent clause introduced by a relative pronoun "which".</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="sentence-type">
+        <ul>
+      <h2>Compound-Complex Sentence</h2>
+      <p>A compound-complex sentence consists of two or more independent clauses and at least one dependent clause.</p>
+      <p>Example: Although it was raining, she went for a walk, and he stayed at home.</p>
+      <div class="exercise">
+        <p>Exercise: Identify whether the following sentences are compound-complex sentences or not.</p>
+        <p>1. I will go to the store if I need some groceries, and I will buy some fruits.</p>
+        <p>2. She went to the park, but it started raining, so she came back home.</p>
+        <p>3. He studied hard for the exam, but he still couldn't pass because he didn't manage his time well.</p>
+        <p>4. After she finished her work, she went to the gym, and she worked out for an hour.</p>
+        <p>5. I will come to the party if I have time, but I'm not sure yet.</p>
+        <p class="show-answer" id="showAnswer4">Show Answer</p>
+        <div class="answer" id="answer4">
+          <p>Answer: Yes, sentences 1, 2, and 3 are compound-complex sentences as they consist of two or more independent clauses and at
+    
+            least one dependent clause. Sentence 4 is also a compound-complex sentence as it consists of two independent clauses and one dependent clause introduced by a subordinating conjunction "after". Sentence 5 is a compound-complex sentence as it consists of two independent clauses and one dependent clause introduced by a subordinating conjunction "if".</p>
+        </div>
+        </div>
+        </div>
+        
+        <div class="sentence-type">
+          <h2>Interrogative Sentence</h2>
+          <ul>
+          <p>An interrogative sentence is a question that asks for information. It ends with a question mark.</p>
+          <p>Example: What is your name?</p>
+          <div class="exercise">
+        
+            <p>Exercise: Identify whether the following sentences are interrogative sentences or not.</p>
+            <p>1. Are you coming to the party tonight?</p>
+            <p>2. The weather is beautiful today.</p>
+            <p>3. I can't believe it!</p>
+            <p>4. He went to the store to buy some groceries.</p>
+            <p>5. Can you pass me the salt, please?</p>
+            <p class="show-answer" id="showAnswer4">Show Answer</p>
+            <div class="answer" id="answer4">
+              <p>Answer: Sentence 1 is an interrogative sentence as it asks a question. Sentences 2, 3, and 4 are not interrogative sentences as they are declarative or exclamatory sentences. Sentence 5 is an interrogative sentence as it asks for a favor using the question "Can you pass me the salt, please?"</p>
+            </div>
+            </div>
+            </div>
+            
+            <div class="sentence-type">
+              <h2>Exclamatory Sentence</h2>
+              <ul>
+              <p>An exclamatory sentence expresses strong emotion or surprise and ends with an exclamation mark.</p>
+              <p>Example: What a beautiful day!</p>
+              <div class="exercise">
+            
+                <p>Exercise: Identify whether the following sentences are exclamatory sentences or not.</p>
+                <p>1. How amazing the fireworks were!</p>
+                <p>2. He won the game, and we were so proud of him.</p>
+                <p>3. I can't believe my eyes!</p>
+                <p>4. The concert was cancelled due to bad weather.</p>
+                <p>5. I wish I could go on a vacation right now!</p>
+                <p class="show-answer" id="showAnswer5">Show Answer</p>
+                <div class="answer" id="answer5">
+                  <p>Answer: Sentences 1 and 3 are exclamatory sentences as they express strong emotion or surprise and end with an exclamation mark. Sentences 2, 4, and 5 are not exclamatory sentences as they are declarative or conditional sentences.</p>
+                </div>
+              </div>
+            </div>
+            
+            <div class="sentence-type">
+              <h2>Conditional Sentence</h2>
+              <ul>
+              <p>A conditional sentence expresses a hypothetical situation or condition and its consequences. It usually consists of an if-clause (dependent clause) and a main clause.</p>
+              <p>Example: If it rains, I will stay at home.</p>
+              <div class="exercise">
+            
+                <p>Exercise: Identify whether the following sentences are conditional sentences or not.</p>
+                <p>1. If I have enough money, I will buy a new car.</p>
+                <p>2. He missed the train because he woke up late.</p>
+                <p>3. She will go to the beach if the weather is sunny.</p>
+                <p>4. I love reading books in my free time.</p>
+                <p>5. If you study hard, you will pass the exam.</p>
+                <p class="show-answer" id="showAnswer6">Show Answer</p>
+                <div class="answer" id="answer6">
+                  <p>Answer: Sentences 1, 3, and 5 are conditional sentences as they express hypothetical situations and their consequences using if-clauses and main clauses. Sentences 2 and 4 are not conditional sentences as they do not have if-clauses or express hypothetical situations.</p>
+                </div>
+              </div>
+            </div>
+            <div class="sentence-type">
+              <h2>Parallel Sentence</h2>
+              <ul>
+                <p>A parallel sentence consists of similar or parallel grammatical structures for balanced and effective writing.</p>
+                <p>Example: She likes to swim, to run, and to dance.</p>
+              </ul>
+              <div class="exercise">
+                <p>Exercise: Identify whether the following sentences are parallel sentences or not.</p>
+                <p>1. I enjoy reading books, taking walks, and playing tennis.</p>
+                <p>2. The sun is shining, and the birds are singing.</p>
+                <p>3. He is not only a great athlete but also a skilled musician.</p>
+                <p>4. She asked me to bake a cake and if I could bring some drinks.</p>
+                <p>5. She walked into the room, waved at everyone, and greeted with a smile.</p>
+                <p class="show-answer" id="showAnswer7">Show Answer</p>
+                <div class="answer" id="answer7">
+                  <p>Answer: Sentences 1, 2, and 5 are parallel sentences as they consist of similar or parallel grammatical structures. Sentences 3 and 4 are not parallel sentences as they do not have parallel structures.</p>
+                </div>
+              </div>
+            </div>
+        
+            <div class="sentence-type">
+              <h2>Inverted Sentence</h2>
+              <ul>
+                <p>An inverted sentence has a different word order than the normal subject-verb-object structure for emphasis or rhetorical effect.</p>
+                <p>Example: Never have I seen such a beautiful sunset.</p>
+              </ul>
+              <div class="exercise">
+                <p>Exercise: Identify whether the following sentences are inverted sentences or not.</p>
+                <p>1. In the middle of the night, he heard a loud noise.</p>
+                <p>2. Little did she know that her life was about to change forever.</p>
+                <p>3. On top of the hill stood a majestic castle.</p>
+                <p>4. Rarely have I seen such a talented singer.</p>
+                <p>5. At the end of the tunnel, there was a bright light.</p>
+                <p class="show-answer" id="showAnswer8">Show Answer</p>
+                <div class="answer" id="answer8">
+                  <p>Answer: Sentences 2 and 4 are inverted sentences as they have a different word order than the normal subject-verb-object structure for emphasis or rhetorical effect. Sentences 1, 3, and 5 are not inverted sentences as they have the normal word order.</p>
+                </div>
+              </div>
+            </div>
+        
+            <div class="sentence-type">
+              <h2>Passive Sentence</h2>
+              <ul>
+                <p>A passive sentence is a sentence in which the subject receives the action of the verb, rather than performing the action.</p>
+                <p>Example: The book was written by the author.</p>
+                </ul>
+                <div class="exercise">
+                <p>Exercise: Identify whether the following sentences are passive sentences or not.</p>
+                <p>1. The cake was baked by my mom.</p>
+                <p>2. The window was broken by the baseball.</p>
+                <p>3. She was given a gift by her friend.</p>
+                <p>4. The car was driven by the mechanic.</p>
+                <p>5. They were surprised by the sudden news.</p>
+                <p class="show-answer" id="showAnswer9">Show Answer</p>
+                <div class="answer" id="answer9">
+                <p>Answer: Sentences 1, 2, 3, 4, and 5 are passive sentences as they have the subject receiving the action of the verb. They are written in the passive voice.</p>
+                </div>
+                </div>
+                </div>
+
+
+
+    </div>
+        </body>
+      </html>
+
+
+
+
+
+
+
+
+

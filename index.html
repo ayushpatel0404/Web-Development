@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <style>
+        body, h1, h2, p, a {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-image: url("https://picsum.photos/1500/900");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+
+       
+        .container {
+            max-width: 560px;
+            width: 100%;
+            padding: 40px;
+            background-color: rgb(241, 220, 201);
+            border-radius: 7px;
+            box-shadow: 0 0 10px maroon;
+            text-align: center; 
+            position: fixed; 
+            align-items: center;
+            
+            opacity: 0;
+        animation: fadeIn 1.5s ease-in-out forwards;
+        
+        }
+        
+        @keyframes fadeIn {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px);
+        }
+        100% {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+      
+
+        h2 {
+            font-size: 1.2em;
+            letter-spacing: 0.2cap;
+            font-weight:bold;
+            color: maroon;
+            margin-top: 35px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+         h1{
+         font-size: 2em;
+         letter-spacing: 0.3cap;
+         font-family:sans-serif;
+         color: maroon;
+         font-weight:bolder;
+        }
+
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 22px;
+            background-color: rgb(246, 77, 10);
+            color: #ffffff;
+            font-size: 20px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 25px;
+            margin-top: 35px;
+            margin-bottom: 3px;
+            transition: background-color 0.2s ease-in-out;   
+        }
+
+       .cta-button:hover{
+        background-color: rgb(210, 58, 3);
+        
+       }
+
+        footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #4caf50;
+            color: #fff;
+            text-align: center;
+            padding: 2px 0;
+            
+        }
+
+        footer p {
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 2px;
+            margin-top: 2px;
+            font-family:'Times New Roman', Times, serif;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: orangered;
+            padding: 8px 16px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 40px;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 80px;
+            height: auto;
+            object-fit: cover;
+            margin-top: -1px;
+            margin-right: 10px;
+            margin-left: -5px;
+        }
+
+        .nav-buttons a {
+            margin-left: 5px;
+            padding: 6px 7px;
+            background-color: #4caf50;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 25px;
+        }
+
+        .nav-buttons a:hover {
+            background-color: #2e7d32;
+        }
+
+
+        .title img {
+            width: 100%;
+            max-width: 300px;
+            height: 90px;
+            border-radius: 60%;
+            box-shadow: 1px 2px 8px maroon;
+            margin-top: -12px;
+
+        
+            transform: scale(0.8);
+            animation: fadeInUp 1s ease-out forwards, scaleUp 1s ease-out forwards;
+            
+        }
+
+
+        @keyframes scaleUp {
+        0% {
+            transform: scale(0.8);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 25px;
+                width: 400px;
+                align-content: center;
+                border-radius: 10px;
+                margin-left: 10px;
+                margin-right: 10px;
+                justify-content: center;
+            }      
+    }
+
+
+    
+    @media (max-width: 476px) {
+            .container {
+                padding: 30px;
+                border-radius: 10px;
+                width: 300px;
+                justify-content: center;
+                margin-bottom: 55px;
+                align-items: center;
+                margin-right: 10px;                
+                margin-left: 10px;
+            }
+    }
+
+    </style>
+
+<!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6572f7ba07843602b8ffa9ff/1hha9jeud';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="assets/navlogo.png" alt="Logo">
+            <h4> <!--write with logo--></h4>
+        </div>
+        <div class="nav-buttons">
+            <a href="about.html"><i class=" fas fa-info-circle"></i>About Us</a>
+            <a href="connect.html"><i class="fas fa-phone-volume"></i>Connect</a>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!--Warning start-->
+        <p style="font-size: 21px; font-weight: 700; margin-bottom: 30px; margin-top: -10px; font-family:'Courier New', Courier, monospace; color: black; letter-spacing: 0.1cap;">⚠️WEBSITE UNDER CONSTRUCTION⚠️</p>
+<!--Warning end-->
+
+        <h3 class="title"><img src="assets/logo new.png" alt="title"></h3>
+        <h2><p>Empower yourself with</p><h1>KNOWLEDGE</h1></h2>
+        <a href="explore.html" class="cta-button">Get Started</a>
+    </div>
+
+
+    <footer>
+        <p>&copy; [2024] BtechWallah - All rights reserved. 🎨 Designed | 💻 Developed | 🌐 Hosted by Ayush Patel.</p> 
+    </footer>
+</body>
+
+</html>

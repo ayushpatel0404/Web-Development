@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mathematics Formulas</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background: rgb(241, 220, 201);
+      margin: 0;
+      padding: 0;
+    }
+  
+    h1 {
+      text-align: center;
+      color: maroon;
+      padding: 20px 0;
+      margin-top: 12px;
+      font-size: 29px;
+    }
+  
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 50px;
+      margin-top: -51px;
+      opacity: 0;
+      animation: fadeInDown 1.5s ease-in-out forwards;
+    }
+  
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .btn-container {
+      width: 100%;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  
+    .btn-group {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+  
+    .btn {
+      margin: 10px;
+      padding: 14px 30px;
+      font-size: 18px;
+      background-color: rgb(241, 235, 235);
+      color: maroon;
+      border: none;
+      border-radius: 15px;
+      cursor: pointer;
+      transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 8px maroon;
+      animation: fadeIn 0.7s cubic-bezier(0.36, 0.55, 0.66, 0.72) forwards;
+    }
+  
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  
+    .btn:nth-child(2) {
+      animation-delay: 0.1s;
+    }
+  
+    .btn:nth-child(3) {
+      animation-delay: 0.2s;
+    }
+  
+    .btn:nth-child(4) {
+      animation-delay: 0.3s;
+    }
+  
+    .btn:nth-child(5) {
+      animation-delay: 0.4s;
+    }
+  
+    .btn:nth-child(6) {
+      animation-delay: 0.5s;
+    }
+  
+    .btn:nth-child(7) {
+      animation-delay: 0.6s;
+    }
+  
+    .btn:nth-child(8) {
+      animation-delay: 0.7s;
+    }
+  
+    .btn:nth-child(9) {
+      animation-delay: 0.8s;
+    }
+  
+    .btn:hover,
+    .btn:hover i {
+      transform: scale(1.1);
+      background-color: rgb(254, 138, 95) !important;
+      color: #fff;
+      box-shadow: 2px 0px 8px maroon;
+    }
+  
+    .btn i {
+      margin-right: 12px;
+      font-size: 20px;
+    }
+  
+    @media (max-width: 576px) {
+      .btn {
+        width: 100%;
+      }
+    }
+  
+    @media (max-width: 1600px) {
+      .btn {
+        width: 100%;
+      }
+    }
+  
+    @media (max-width: 468px) {
+      .btn {
+        max-width: 100%;
+      }
+    }
+  </style>
+  
+ 
+  
+</head>
+<body>
+  <h1>Mathematics Formulas</h1>
+  <div class="container fade-in">
+    <div class="btn-container">
+      
+      <div class="btn-group">
+        <a href="#" class="btn" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+          <i class="fas fa-graduation-cap"></i> Class 4 </a>
+          <a href="#" class="btn" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            <i class="fas fa-graduation-cap"></i> Class 5 </a>
+        <a href="https://1drv.ms/w/s!AratX8Fz-zRMsXmiLKPr-IouGzrn?e=Funvmz" class="btn" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+          <i class="fas fa-graduation-cap"></i> Class 6 </a>
+          <a href="https://1drv.ms/w/s!AratX8Fz-zRMsXmiLKPr-IouGzrn?e=Funvmz" class="btn" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            <i class="fas fa-graduation-cap"></i> Class 7 </a>
+        <a href="#" class="btn" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+          <i class="fas fa-graduation-cap"></i> Class 8 </a>
+        <a href="#" class="btn" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+          <i class="fas fa-graduation-cap"></i> Class 9 </a>
+          <a href="#" class="btn" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+            <i class="fas fa-graduation-cap"></i> Class 10 </a>
+            <a href="#" class="btn" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+              <i class="fas fa-graduation-cap"></i> Class 11 </a>
+              <a href="#" class="btn" onmouseover="changeColor(this)" onmouseout="resetColor(this)">
+                <i class="fas fa-graduation-cap"></i> Class 12 </a>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+  <script>
+    function changeColor(element) {
+      element.style.backgroundColor = "#3498db";
+    }
+
+    function resetColor(element) {
+      element.style.backgroundColor = "#fff";
+    }
+
+    document.addEventListener("DOMContentLoaded", function () {
+      
+      document.querySelector('.fade-in').style.animationPlayState = 'running';
+    });
+  </script>
+</body>
+</html>

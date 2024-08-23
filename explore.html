@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+    <title>Explore Page</title>
+    <style>
+
+      .box {
+        position: relative;
+        width: 280px;
+        height: 280px;
+        background-color: #fff;
+        margin: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 26px;
+        font-weight: bold;
+        font-family: 'Times New Roman', Times, serif;
+        box-shadow: 1px 4px 5px orangered;
+        border-radius: 10px;
+        transition: transform 0.2s ease-in-out;
+        
+      }
+      .box:hover {
+        transform: scale(1.05);
+      }
+      .box:nth-child(1) {
+        background-color:rgb(247, 198, 139);  /* #4caf50 */
+        color: maroon;
+      }
+      .box:nth-child(2) {
+        background-color: rgb(247, 198, 139);  /*#03a9f4 */
+        color: maroon;
+      }
+      .box:nth-child(3) {
+        background-color: rgb(247, 198, 139);  /* #f44336 */
+        color: maroon;
+      }
+      .box:nth-child(4) {
+        background-color: rgb(247, 198, 139);   /*#9c27b0*/
+        color: maroon;
+      }
+
+
+      .box:nth-child(5) {
+        background-color: rgb(247, 198, 139);  /* #f3a256 */
+        color: maroon;
+      }
+      .box:nth-child(6) {
+        background-color: rgb(247, 198, 139);  /* #5340e0 */
+        color: maroon;
+      }
+      .box:nth-child(7) {
+        background-color :rgb(226, 216, 213);  /* rgb(255, 255, 255) */
+        color: maroon;
+      }
+      
+
+      .box i {
+        font-size: 50px;
+        margin-bottom: 30px;
+      }
+      .explore-button {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 12px 30px;
+        background-color: #e9dcdc;
+        color: orangered;
+        border: 0px solid white;
+        border-radius: 25px;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+        transition: transform 0.2s ease-in-out;
+      
+      }
+      .explore-button:hover {
+        transform: (1.05);
+        background-color: orangered;
+        color: #fff;
+      }
+      #container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        margin-top: 35px;
+        animation: slideInFromLeft 1s ease-in-out;
+      }
+      h1 {
+        font-size: 25px;
+        font-weight: bold;
+        text-align: center;
+        margin-top: 120px;
+        font-style: unset;
+        font-family:cursive;
+        color: maroon;
+        text-shadow: 0px 0px 0px rgb(235, 231, 238);
+      }
+  
+      h1 p {
+        color: maroon;
+        text-align: center;
+        margin-top: 25px;
+      }
+
+      .title img {
+            width: 100%;
+            max-width: 300px;
+            height: 90px;
+            border-radius: 60%;
+            box-shadow: 1px 2px 8px maroon; 
+            
+
+                  
+            transform: scale(0.8);
+            animation: fadeInUp 1s ease-out forwards, scaleUp 1s ease-out forwards;
+        }
+
+
+        
+        @keyframes scaleUp {
+        0% {
+            transform: scale(0.8);
+        }
+        100% {
+            transform: scale(1);
+        }
+    }
+
+
+      body {
+   /* background-image: url("assets/Backgroundimg.png"); */
+    background-color: rgb(241, 220, 201);
+    background-size: cover;
+    background-position: center;
+    overflow-x: hidden; 
+                }
+                
+      #page-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 30px;
+        margin-bottom: 20px;
+       
+      }
+
+      footer {
+              position:relative ;
+              bottom: -37px;
+              left: 0;
+              width: 100%;
+              background-color: #4caf50;
+              color: #fff;
+              text-align: center;
+              padding: 2px 0;
+              font-family: Georgia, 'Times New Roman', Times, serif;
+              font-size: 14px;             
+             }
+
+@keyframes slideInFromLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+    </style>
+
+  <!--Start of Tawk.to Script-->
+<script type="text/javascript">
+    var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+    (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6572f7ba07843602b8ffa9ff/1hha9jeud';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s0.parentNode.insertBefore(s1,s0);
+    })();
+    </script>
+    <!--End of Tawk.to Script-->
+
+  </head>
+  <body>
+  <!-- Navigation Bar --> 
+      <style>
+          * {
+              box-sizing: border-box;
+              padding: 0;
+              margin: 0;
+          }
+  
+          body {
+              font-family: sans-serif;
+              font-size: 18px;
+              margin: 0;
+              margin-bottom: 80px;
+              margin-top: -25px;
+          }
+  
+          nav {
+              background: orangered;
+              padding: 0px 10px;
+              position: fixed;
+              top: 0;
+              width: 100%;
+              z-index: 1;
+              height: 69px;
+              animation: slideInFromTop 1s ease-in-out;
+            
+          }
+  
+          .menu,
+          .submenu {
+              list-style-type: none;
+              background-color:#1e1381;
+          }
+         
+  
+          .logo {
+              font-size: 14px;
+              padding: 10px 0;
+              margin-top: -6px;
+              order: 0;
+          }
+  
+          .item {
+              padding: 17px;
+             
+          }
+          .item a:hover {
+              background-color: #1e1381;
+  
+           }
+          .item.button {
+              padding: 6px 5px;
+          }
+  
+          a {
+              color: rgb(255, 255, 255);
+              text-decoration: none;
+            
+          }
+  
+          .menu {
+              display:flex;
+              flex-wrap: wrap;
+              justify-content: space-between;
+              align-items: center;
+              background-color: orangered;
+             
+            
+          }
+  
+          .menu li a {
+              display: block;
+              padding: 4px 4px;
+          }
+  
+          .toggle {
+              order: 2;
+              font-size: 25px;
+              margin-top: 3px;
+          }
+  
+          .item.button {
+              order: 1;
+             
+             
+          }
+  
+          .item {
+              order: 3;
+              width: 100%;
+              text-align: center;
+              display: none;
+        
+          }
+  
+          .active .item {
+              display: block;
+          }
+  
+          .button.secondary a:hover {
+              background-color:#1e1381;
+          }
+          .button.button:not(.secondary) a:hover {
+              background-color:#1e1381;
+          }
+          .button:not(.secondary) {
+              margin-left: 280px;
+          }
+  
+          .submenu {
+              display: none;
+          }
+  
+          .submenu-active .submenu {
+              display: block;
+              
+          }
+  
+          .has-submenu i {
+              font-size: 12px;
+          }
+  
+          .has-submenu>a::after {
+              font-family: "Font Awesome 5 Free";
+              font-size: 12px;
+              line-height: 16px;
+              font-weight: 900;
+              content: "\f078";
+              color: white;
+              padding-left: 5px;
+          }
+  
+          .subitem a {
+              padding: 10px 15px;
+          }
+  
+          .submenu-active {
+              background-color: #1e1969;
+              border-radius: 3px;
+             
+          }
+  
+          .logo {
+              display: flex;
+              align-items: center;
+              padding-top: 8px;
+          }
+  
+          .logo img {
+              width: 80px;
+              height: 35px;
+              object-fit: cover;
+              border-radius: 0px;
+              margin-right: 20px;
+              margin-left: 0px; 
+              margin-top: 8px;
+              padding-top: 5px;
+          }
+  
+          
+      .toggle {
+          order: 2;
+          font-size: 25px;
+          margin-top: 3px;
+          position: fixed;
+          right: 20px; 
+          top: 13px; 
+          transition: all 0.3s ease; 
+          cursor: pointer;
+          z-index: 2;
+      }
+  
+      .menu.active .toggle {
+          right: 20px; 
+      }
+  
+  
+      @media all and (min-width: 960px) {
+    
+  
+          .toggle {
+              display: none; 
+          }
+      }
+
+          @media all and (min-width: 1200px) {
+              .menu {
+                  justify-content: space-between;
+              }
+       
+              .logo {
+                  flex: 0; 
+              }
+  
+              .item.button {
+                  width: auto;
+                  order: 1;
+                  display: block;
+              }
+  
+              .toggle {
+                  flex: 0; 
+                  text-align: right;
+                  order: 2;
+              }
+  
+              .menu li.button a {
+                  padding: 10px 15px;
+                  margin: 5px 0;
+              }
+          }
+  
+          .button a {
+              background: rgb(65, 102, 212) solid;
+            border-radius: 1px;
+           
+          }
+  
+          .button.secondary {
+              border: 0;
+              margin-left: 0px;
+          
+          }
+  
+          .button.secondary a {
+              background: #0080ff solid;
+              
+          }
+          .button.button:not(.secondary){
+              margin-left: 0px;
+            
+             
+          }
+  
+          .button a:hover {
+              text-decoration: none;
+          }
+  
+        
+        
+          @media all and (min-width: 960px) {
+              .menu {
+                  align-items: flex-start;
+                  flex-wrap: nowrap;
+                  background: none;
+              }
+           
+             .logo {
+                  order: 0;
+              }
+  
+              .item {
+                  order: 1;
+                  position: relative;
+                  display: block;
+                  width: auto;
+              }
+  
+              .button {
+                  order: 2;
+                 
+              }
+             
+              .submenu-active .submenu {
+                  display: block;
+                  position: absolute;
+                  left: 0;
+                  top: 68px;
+                  background: #1e1381;
+              }
+  
+              .toggle {
+                  display: none;
+              }
+  
+              .submenu-active {
+                  border-radius: 0;
+              }
+  
+              #faq {
+                  margin-top: 110px;
+              }
+  
+              .faq-question {
+                  width: 60%;
+                 
+              }
+              .button.secondary {
+              border: 0;
+              margin-left: 0px;
+              
+          }
+  
+          }
+  
+  
+  
+          @media screen and (max-width: 700px) {
+      .menu.active {
+          display: flex;
+          flex-direction: column;
+          align-items: stretch;
+      }
+      .item {
+      padding: 8px;
+   }
+      .menu.active .item {
+          display: block;
+          width: 100%;
+          text-align: center;
+      }
+  }
+
+
+  
+  @media screen and (max-width: 476px) {
+    .h1 p{
+        font-size: 14px;
+    }
+  }
+      </style>
+  </head>
+
+  <body>
+    <div id="page-container">
+        <h1><p>Discover the Joy of Learning</p> with !
+         <p class="title"><img src="assets/logo new.png" alt="title"></p> </h1>
+        <div id="container">
+          <!-- Topic boxes -->
+          
+          <div class="box">
+            <i class="fas fa-graduation-cap"></i>
+           <span>B.Tech (CS/IT)</span>
+            <a href="btechexplore.html" class="explore-button">Explore</a>
+          </div>
+          
+          <div class="box">
+            <i class="fab fa-gofore"></i>
+           <span>Gate Preparation</span>
+            <a href="gateexplore.html" class="explore-button">Explore</a>
+          </div>
+  
+          <div class="box">
+            <i class="	fa fa-trophy"></i>
+           <span> 1000+ Aptitude Q.</span>
+            <a href="aptitudeexplore.html" class="explore-button">Explore</a>
+          </div>
+  
+          <div class="box">
+            <i class="fab fa-python"></i>
+           <span>Python Language</span>
+            <a href="pythonexplore.html" class="explore-button">Explore</a>
+          </div>
+          <div class="box">
+            <i class="	fa fa-book" ></i>
+            <span>Current Affairs</span>
+            <a href="gkexplore.html" class="explore-button">Explore</a>
+          </div>
+        
+    
+          <div class="box">
+            <i class="fa fa-list"></i>
+             <span>Maths Formulas</span>
+              <a href="mathsexplore.html" class="explore-button">Explore</a>
+            </div>
+           
+            <div class="box">
+              <i class="fa fa-rocket"></i>
+              <span>More to learn</span>
+              <a href="learnmore.html" class="explore-button">Click</a>
+            </div>
+            </div>
+            </div>
+            <!--buttons in navbar-->
+            <nav>
+              <ul class="menu" id="navbar">
+              <li class="logo"><a href="index.html"><img src="assets/navlogo.png" alt="Logo"></a></li>
+              <li class="item"><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+              <li class="item has-submenu">
+                  <a tabindex="0"><i class="fas fa-caret-down"></i> What we Provide</a>
+                  <ul class="submenu">
+                      <li class="subitem"><a href="btechexplore.html">BTech(CS/IT)</a></li>
+                      <li class="subitem"><a href="gateexplore.html">Gate Preparation</a></li>
+                      <li class="subitem"><a href="aptitudeexplore.html">Aptitude Questions</a></li>
+                      <li class="subitem"><a href="pythonexplore.html">Python</a></li>
+                      <li class="subitem"><a href="gkexplore.html">GK, GS, Current Affairs</a></li>
+                      <li class="subitem"><a href="mathsexplore.html">Maths Formulas</a></li>
+                      <li class="subitem"><a href="quizexplore.html">Quiz</a></li>
+                      <li class="subitem"><a href="grammer.html">Practice Grammer</a></li>
+                      <li class="subitem"><a href="tableexplore.html">Tables</a></li>
+                      <li class="subitem"><a href="essayenglish.html">Essay Writing</a></li>
+                      <li class="subitem"><a href="previouspapers.html">AKTU Previous Papers</a></li>
+                  </ul>
+                  </li>
+              <li class="item"><a href="explore.html"><i class="fas fa-search"></i> Explore</a></li>
+              <li class="item"><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+              <li class="item"><a href="https://erp.aktu.ac.in/webpages/oneview/oneview.aspx"><i class="fa fa-check"></i> One View</a></li>
+              
+                  <li class="item"><a href="connect.html"><i class="fas fa-envelope"></i> Contact</a></li>
+                  <li class="item button primary"><a href="login.html"><i class="fas fa-sign-in-alt"></i> Log In</a></li>
+              <li class="item button secondary"><a href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a></li>
+              <li class="toggle"><a href="#"><i class="fas fa-bars"></i></a></li>
+          </ul>
+      </nav>
+   <!--Nav End-->
+  <script>
+      const submenuToggle = document.querySelector('.has-submenu > a');
+      
+      submenuToggle.addEventListener('click', function (e) {
+          e.preventDefault();
+  
+          const submenu = this.nextElementSibling;
+  
+          if (submenu.style.display === 'block') {
+              submenu.style.display = 'none';
+          } else {
+              submenu.style.display = 'block';
+          }
+      });
+  
+      const navbar = document.getElementById("navbar");
+      const toggleButton = document.querySelector(".toggle a");
+  
+      toggleButton.addEventListener("click", function () {
+          navbar.classList.toggle("active");
+      });
+
+
+      document.addEventListener('DOMContentLoaded', function () {
+    var footer = document.querySelector('footer');
+    var isFooterVisible = false;
+
+    function updateFooterVisibility() {
+        var scrollHeight = window.scrollY + window.innerHeight;
+        var documentHeight = document.body.offsetHeight;
+        var footerHeight = footer.offsetHeight;
+
+        if (scrollHeight >= documentHeight - footerHeight && !isFooterVisible) {
+            document.body.style.marginBottom = footerHeight + 'px';
+            isFooterVisible = true;
+        } else if (scrollHeight < documentHeight - footerHeight && isFooterVisible) {
+            document.body.style.marginBottom = '0';
+            isFooterVisible = false;
+        }
+    }
+
+    window.addEventListener('scroll', updateFooterVisibility);
+
+   
+    window.addEventListener('load', updateFooterVisibility);
+});
+       </script>
+         <footer>
+            <p>&copy; [2024] BtechWallah- All rights reserved. 🎨 Designed | 💻 Developed | 🌐 Hosted by Ayush Patel. </p>
+            </footer>
+        </body>
+        </html>
+  

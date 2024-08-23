@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 90px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #3498db;
+        }
+
+        .quiz-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            margin-bottom: 20px;
+        }
+
+        .options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        button {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #2980b9;
+        }
+
+        .result-container {
+            margin-top: 20px;
+        }
+
+        .correct-answer {
+            color: #2ecc71;
+            font-weight: bold;
+        }
+
+        .wrong-answer {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="quiz-container">
+        <h1>Python QUIZ - 1</h1>
+        <hr>
+
+        <div class="question" id="questionContainer"></div>
+
+        <div class="options" id="optionsContainer"></div>
+        
+        <button onclick="previousQuestion()">Previous</button>
+        <button onclick="checkAnswer()">Submit</button>
+        
+        <div class="result-container" id="resultContainer"></div>
+    </div>
+
+    <script>
+        var questions = [
+            {
+                question: "1) Who developed Python Programming Language?",
+                options: [" Wick van Rossum", "Rasmus Lerdorf" , "Guido van Rossum"," Niene Stom"],
+                correctAnswer: "Guido van Rossum"
+            },
+    {
+        question: "2) Which type of Programming does Python support? ",
+        options: [" object-oriented programming", " structured programming", " functional programming","all of the mentioned"],
+        correctAnswer: "all of the mentioned"
+    },
+    {
+        question: "3)Is Python case sensitive when dealing with identifiers?",
+        options: [" no", "yes", "machine dependent", " none of the mentioned"],
+        correctAnswer: "machine dependent"
+    },
+    {
+        question: "4)  Which of the following is the correct extension of the Python file?",
+        options: [".python", ".pl", ".py", ".p"],
+        correctAnswer: ".py"
+    },
+    {
+        question: "5) Is Python code compiled or interpreted?",
+        options: ["Python code is both compiled and interpreted", "Python code is neither compiled nor interpreted", "Python code is only compiled"," Python code is only interpreted"],
+        correctAnswer: "Python code is both compiled and interpreted"
+    },
+    {
+        question: "6)  All keywords in Python are in",
+        options: [" Capitalized", " lower case", " UPPER CASE"," None of the mentioned"],
+        correctAnswer: "None of the mentioned"
+    },
+    {
+        question: "7) Which of the following is used to define a block of code in Python language?",
+        options: ["Indentation", "Key", "Brackets","All of the mentioned"],
+        correctAnswer: "Indentation"
+    },
+    {
+        question:"8) Which keyword is used for function in Python language?",
+        options: [" Function", "def", " Fun"," Define"],
+        correctAnswer: "def"
+    },
+    {
+        question: "9)  Python supports the creation of anonymous functions at runtime, using a construct called _",
+        options: ["pi", "anonymous", "lambda","none of the above"],
+        correctAnswer: "lambda"
+    },
+    {
+        question: "10)  What does pip stand for python?",
+        options: ["Pip Installs Python", "Pip Installs Packages", "Preferred Installer Program"," All of the mentioned"],
+        correctAnswer: "Preferred Installer Program"
+    },
+   
+];
+        var questionIndex = 0;
+
+        function loadQuestion() {
+            var questionContainer = document.getElementById('questionContainer');
+            var optionsContainer = document.getElementById('optionsContainer');
+            var currentQuestion = questions[questionIndex];
+
+            questionContainer.innerHTML = "<p>" + currentQuestion.question + "</p>";
+
+            var optionsHtml = "";
+            currentQuestion.options.forEach(function (option) {
+                optionsHtml += "<label><input type='radio' name='q' value='" + option + "'>" + option + "</label>";
+            });
+
+            optionsContainer.innerHTML = optionsHtml;
+        }
+
+        function checkAnswer() {
+            var userAnswer = document.querySelector('input[name="q"]:checked');
+            var resultContainer = document.getElementById('resultContainer');
+
+            if (userAnswer) {
+                var userResponse = userAnswer.value;
+                var currentQuestion = questions[questionIndex];
+
+                resultContainer.innerHTML = "";
+
+                if (userResponse === currentQuestion.correctAnswer) {
+                    resultContainer.innerHTML = "<p class='correct-answer'>Correct Answer!</p>";
+                } else {
+                    resultContainer.innerHTML = "<p class='wrong-answer'>Wrong Answer! The correct answer is " + currentQuestion.correctAnswer + ".</p>";
+                }
+
+               
+                questionIndex++;
+                if (questionIndex < questions.length) {
+                    loadQuestion();
+                } else {
+                    
+                    displayCorrectAnswers();
+                }
+            } else {
+                resultContainer.innerHTML = "<p class='wrong-answer'>Please select an answer.</p>";
+            }
+        }
+
+        function displayCorrectAnswers() {
+            var resultContainer = document.getElementById('resultContainer');
+            resultContainer.innerHTML = "<p class='correct-answer'>Quiz Completed! Here are the correct answers:</p>";
+
+            questions.forEach(function (question) {
+                resultContainer.innerHTML += "<p class='correct-answer'>" + question.question + ": " + question.correctAnswer + "</p>";
+            });
+        }
+
+        
+        loadQuestion();
+
+
+    function previousQuestion() {
+        
+        if (questionIndex > 0) {
+            
+            questionIndex--;
+            loadQuestion();
+
+           
+            document.getElementById('submitButton').disabled = false;
+        } else {
+            
+            alert("This is the first question.");
+        }
+    }
+
+    </script>
+
+</body>
+</html>

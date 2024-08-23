@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Active Voice</title>
+  <style>
+    /* Center the heading */
+    h1 {
+      text-align: center;
+      font-size: 48px;
+    }
+    h2 {
+        font-size: 30px;
+    }
+    ul {
+       font-size: 20px; 
+    }
+    /* Add some attractive styling to the heading */
+    h1 {
+      color: #cc6600;
+      font-size: 36px;
+      text-shadow: 2px 2px #e5e5e5;
+    }
+    /* Add some margin to the exercise form for spacing */
+    #exerciseForm {
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    /* Add some padding and margin to the exercise form list for spacing */
+    #exerciseForm ol {
+      padding-left: 20px;
+      margin-top: 10px;
+    }
+    /* Add some margin to the result paragraph for spacing */
+#result {
+  margin-top: 10px;
+}
+p {
+  font-size: 25px; /* Increased font size */
+}
+
+.explore-button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .explore-button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        .explore-button:hover {
+            background-color: #0056b3;
+        }
+
+</style>
+  <script>
+function checkAnswers() {
+  var answers = document.getElementById('exerciseForm').getElementsByTagName('input');
+  var correctCount = 0;
+  for (var i = 0; i < answers.length; i++) {
+    if (answers[i].checked && answers[i].value === 'a') {
+      correctCount++;
+    }
+  }
+  document.getElementById('result').innerHTML = 'You got ' + correctCount + ' out of 5 correct!';
+}
+  </script>
+</head>
+<body>
+  <h1>Active Voice</h1>
+  <p>Active voice is a grammatical term used to describe a sentence where the subject of the sentence performs the action expressed by the verb. In active voice, the subject is the doer of the action, and the sentence is typically structured as "subject + verb + object".</p>
+  <h2>Examples:</h2>
+  <ul>
+    <li>The cat chased the mouse.</li>
+    <li>She sings a song.</li>
+    <li>They built a sandcastle on the beach.</li>
+    <li>He reads a book.</li>
+    <li>The chef is cooking dinner.</li>
+  </ul>
+  <h2>Advantages of Active Voice:</h2>
+  <p>Active voice is often preferred in writing and communication because it is more direct, concise, and engaging. It clearly identifies the subject as the doer of the action, making the sentence more engaging and impactful. Active voice also tends to be more efficient and uses fewer words compared to passive voice.</p>
+  <h2>Usage of Active Voice:</h2>
+  <p>Active voice is commonly used in various situations, such as:</p>
+  <ul>
+    <li>When the subject is known and important.</li>
+    <li>When emphasizing the doer of the action </li>
+    <li>When expressing clear and concise ideas.</li>
+    <li>When writing in a more engaging and dynamic style.</li>
+    <li>When conveying a sense of responsibility or accountability.</li>
+    
+      </ul>
+      <h2>Exercise:</h2>
+      <p>Test your knowledge of active voice with this exercise. Choose the correct option for each sentence:</p>
+      <form id="exerciseForm">
+        <ol>
+          <li>
+            <label for="q1">The cake was baked by <u>who</u>?</label><br>
+            <input type="radio" name="q1" value="a">Who baked the cake?<br>
+            <input type="radio" name="q1" value="b">Who was the cake baked by?<br>
+            <input type="radio" name="q1" value="c">Who the cake was baked by?<br>
+          </li>
+          <li>
+            <label for="q2">They have completed <u>what</u>?</label><br>
+            <input type="radio" name="q2" value="a">What have they completed?<br>
+            <input type="radio" name="q2" value="b">What has been completed by them?<br>
+            <input type="radio" name="q2" value="c">What completed by them?<br>
+          </li>
+          <li>
+            <label for="q3">She will present the report at <u>which</u> meeting?</label><br>
+            <input type="radio" name="q3" value="a">Which meeting will she present the report at?<br>
+            <input type="radio" name="q3" value="b">At which meeting will the report be presented by her?<br>
+            <input type="radio" name="q3" value="c">Which meeting the report will be presented by her?<br>
+          </li>
+          <li>
+            <label for="q4">He wrote a letter to <u>whom</u>?</label><br>
+            <input type="radio" name="q4" value="a">Whom did he write a letter to?<br>
+            <input type="radio" name="q4" value="b">A letter was written by him to whom?<br>
+            <input type="radio" name="q4" value="c">Whom he wrote a letter to?<br>
+          </li>
+          <li>
+            <label for="q5">They are organizing the event on <u>which</u> date?</label><br>
+            <input type="radio" name="q5" value="a">On which date are they organizing the event?<br>
+            <input type="radio" name="q5" value="b">The event is being organized by them on which date?<br>
+            <input type="radio" name="q5" value="c">On which date the event is being organized by them?<br>
+          </li>
+        </ol>
+        <button type="button" onclick="checkAnswers()">Submit</button>
+      </form>
+      <p id="result"></p>
+    <div class="explore-button-container">
+        <a href="grammer8.html" class="explore-button">Learn about Passive Voice</a>
+    </div>
+    </body>
+    </html>

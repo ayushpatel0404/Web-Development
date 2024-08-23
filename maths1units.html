@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maths 1 Units</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: rgb(251, 197, 153);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: #ffffff;
+        }
+
+        h1 {
+            color: maroon;
+            margin-bottom: 0px;
+            margin-top: 10px;
+            font-size: 25px;
+            text-align: center;
+        }
+
+        #units-container {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin-top:  40px;
+        }
+
+        .unit {
+            background-color: rgb(237, 229, 225);
+            border: 1px solid maroon;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(216, 203, 203, 0.1);
+            transition: transform 0.3s ease-in-out;
+            flex: 1 0 45%; 
+            margin-bottom: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .unit:hover {
+            transform: scale(1.05);
+        }
+
+        .unit-content {
+            padding: 10px;
+            flex: 1;
+        }
+
+
+    .unit-content a,
+    .unit-content a:hover,
+    .unit-content a:visited,
+    .unit-content a:focus,
+    .unit-content a:active {
+        text-decoration: none !important;
+        color: inherit;
+        justify-content: center;
+   
+    }
+
+        .unit h2 {
+            color: maroon;
+            margin-bottom: 10px;
+            font-size: 1rem;
+        
+        }
+
+        .unit-content h2 {
+            text-align: center;
+    margin: 0;
+    color: maroon;
+    font-size: 1rem;
+}
+        
+
+        .view-option {
+            margin-top: 30px;
+            display: flex;
+            gap: 10px;
+        }
+
+        .view-option label {
+            cursor: pointer;
+            color: maroon;
+            text-decoration: underline;
+            border: 2px solid maroon;
+            padding: 5px 10px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+        }
+
+        .view-option label:hover {
+            background-color: #ffffff;
+            color: #ee730e;
+        }
+
+        .view-option input {
+            display: none;
+        }
+
+        @media screen and (max-width: 600px) {
+            .unit {
+                flex: 1 0 100%;
+            }
+        }
+
+
+        .list-view .unit {
+            flex: 1 0 100%;
+        }
+
+        .grid-view .unit {
+            flex: 1  0 45%;
+        }
+
+       
+       
+    </style>
+
+<body>
+
+    <h1>ENGINEERING MATHEMATICS I</h1>
+
+    <div class="view-option">
+        <label for="list-view">List View</label>
+        <input type="radio" name="view" id="list-view" checked>
+
+        <label for="grid-view">Grid View</label>
+        <input type="radio" name="view" id="grid-view">
+    </div>
+
+    <div id="units-container" class="grid-view">
+        <div class="unit">
+            <div class="unit-content">
+                <a href="#">
+                    <h2>Unit 1
+                    <p>MATRICES</p></h2>
+                </a>
+            </div>
+        </div>
+
+        <div class="unit">
+            <div class="unit-content">
+                <a href="#">
+                    <h2>Unit 2
+                    <p>DIFFERENTIAL CALCULUC - I</p></h2>
+                </a>
+            </div>
+        </div>
+
+        <div class="unit">
+            <div class="unit-content">
+                <a href="#">
+                    <h2>Unit 3
+                    <p>DIFFERENTIAL CALCULUS - II</p></h2>
+                </a>
+            </div>
+        </div>
+
+        <div class="unit">
+            <div class="unit-content">
+                <a href="#">
+                    <h2>Unit 4
+                    <p>MULTIVARIABLE CALCULUS</p></h2>
+                </a>
+            </div>
+        </div>
+
+        <div class="unit">
+            <div class="unit-content">
+                <a href="#">
+                    <h2>Unit 5
+                    <p>VECTOR CALCULUS</p></h2>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const viewOptions = document.querySelectorAll('.view-option input');
+            const unitsContainer = document.getElementById('units-container');
+
+            viewOptions.forEach(option => {
+                option.addEventListener('change', function () {
+                    unitsContainer.className = this.id === 'list-view' ? 'list-view' : 'grid-view';
+                });
+            });
+            
+            document.getElementById('list-view').checked = true;
+            unitsContainer.className = 'list-view';
+        });
+    </script>
+
+</body>
+
+</html>
